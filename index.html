@@ -72,15 +72,27 @@
     }
     .nav-dot {
       display: inline-block;
-      width: 10px;
-      height: 10px;
+      width: 7px;
+      height: 7px;
       border-radius: 50%;
       background: var(--rosa);
-      margin-left: 6px;
+      margin-left: 5px;
       vertical-align: middle;
       position: relative;
       top: -1px;
-      box-shadow: 0 0 10px 4px rgba(167,109,140,0.45), 0 0 24px 8px rgba(167,109,140,0.2);
+      box-shadow: 0 0 8px 3px rgba(167,109,140,0.45), 0 0 18px 6px rgba(167,109,140,0.2);
+    }
+    .glow-dot {
+      display: inline-block;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--rosa-2);
+      margin-left: 5px;
+      vertical-align: middle;
+      position: relative;
+      top: -2px;
+      box-shadow: 0 0 8px 3px rgba(193,149,171,0.5), 0 0 18px 6px rgba(193,149,171,0.25);
     }
     .nav-cta {
       background: var(--rosa);
@@ -826,7 +838,7 @@
       </div>
       <div>
         <div class="eyebrow eyebrow-light">Quem vai te ensinar</div>
-        <h2 class="instructor-name">Carol <em>Rosignoli</em></h2>
+        <h2 class="instructor-name">Carol <em>Rosignoli</em><span class="glow-dot"></span></h2>
         <p class="instructor-role">Professora formada na USP e em Stanford · Head de Learning e D&amp;I</p>
         <p class="instructor-bio">
           Mãe da Elisa e Head de Learning e D&amp;I na Alice. Mestra em Filologia e Língua Portuguesa pela USP, com MBA em Gestão Empresarial pela FGV e licenciatura em Pedagogia, atuou como gestora escolar, coordenadora pedagógica, editora e gerente editorial de materiais para a educação básica, com duas obras aprovadas no PNLD 2021.
@@ -903,6 +915,17 @@
   <footer>
     <div class="wrap" style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;">
       <span>© 2025 Carol Rosignoli · Workshop Gratuito</span>
+      <svg width="80" height="32" viewBox="0 0 160 60" fill="none" xmlns="http://www.w3.org/2000/svg" style="opacity:0.55;">
+        <line x1="4" y1="52" x2="112" y2="12" stroke="#756B92" stroke-width="1.2" stroke-linecap="round"/>
+        <ellipse cx="118" cy="10" rx="7" ry="4" transform="rotate(-30 118 10)" fill="#756B92"/>
+        <ellipse cx="128" cy="6" rx="7" ry="4" transform="rotate(-30 128 6)" fill="#756B92"/>
+        <ellipse cx="138" cy="3" rx="6" ry="3.5" transform="rotate(-30 138 3)" fill="#756B92"/>
+        <ellipse cx="148" cy="1" rx="5.5" ry="3" transform="rotate(-30 148 1)" fill="#756B92"/>
+        <ellipse cx="120" cy="18" rx="7" ry="4" transform="rotate(-50 120 18)" fill="#756B92"/>
+        <ellipse cx="130" cy="14" rx="7" ry="4" transform="rotate(-50 130 14)" fill="#756B92"/>
+        <ellipse cx="140" cy="11" rx="6" ry="3.5" transform="rotate(-50 140 11)" fill="#756B92"/>
+        <ellipse cx="150" cy="9" rx="5" ry="3" transform="rotate(-50 150 9)" fill="#756B92"/>
+      </svg>
       <span>Todos os direitos reservados</span>
     </div>
   </footer>
