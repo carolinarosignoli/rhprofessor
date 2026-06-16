@@ -70,6 +70,18 @@
       font-style: italic;
       color: var(--rosa);
     }
+    .nav-dot {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--rosa);
+      margin-left: 6px;
+      vertical-align: middle;
+      position: relative;
+      top: -1px;
+      box-shadow: 0 0 10px 4px rgba(167,109,140,0.45), 0 0 24px 8px rgba(167,109,140,0.2);
+    }
     .nav-cta {
       background: var(--rosa);
       color: #fff;
@@ -661,7 +673,7 @@
   <!-- NAV -->
   <nav>
     <div class="nav-inner">
-      <span class="nav-brand">Carol <em>Rosignoli</em></span>
+      <span class="nav-brand">Carol <em>Rosignoli</em><span class="nav-dot"></span></span>
       <a href="#inscricao" class="nav-cta">Garantir minha vaga</a>
     </div>
   </nav>
