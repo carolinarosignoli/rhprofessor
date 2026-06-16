@@ -325,38 +325,39 @@
     /* ─── STRIP ─── */
     .strip {
       background: var(--grafite);
-      padding: 36px 80px;
+      padding: 28px 40px;
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 56px;
-      flex-wrap: wrap;
+      gap: 32px;
+      flex-wrap: nowrap;
     }
-    .strip-item { text-align: center; }
+    .strip-item { text-align: center; white-space: nowrap; }
     .strip-num {
       font-family: 'Fraunces', Georgia, serif;
-      font-size: 38px;
+      font-size: 28px;
       font-weight: 900;
       color: var(--rosa-2);
       line-height: 1;
     }
     .strip-logo {
-      height: 36px;
+      height: 26px;
       width: auto;
-      max-width: 120px;
+      max-width: 80px;
       object-fit: contain;
       filter: brightness(0) invert(1) opacity(0.75);
       display: block;
       margin: 0 auto;
     }
     .strip-label {
-      font-size: 12px;
+      font-size: 11px;
       color: var(--text-dark-muted);
-      margin-top: 8px;
+      margin-top: 6px;
     }
     .strip-sep {
       width: 1px;
-      height: 48px;
+      height: 36px;
+      min-width: 1px;
       background: rgba(255,255,255,0.1);
     }
 
