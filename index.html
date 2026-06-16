@@ -45,14 +45,19 @@
     nav {
       background: var(--creme);
       border-bottom: 1px solid var(--linha);
-      padding: 0 64px;
       height: 64px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
       position: sticky;
       top: 0;
       z-index: 100;
+    }
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 64px;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
     }
     .nav-brand {
       font-family: 'Fraunces', Georgia, serif;
@@ -80,17 +85,30 @@
     }
     .nav-cta:hover { background: var(--rosa-deep); }
 
+    /* ─── MAX WIDTH WRAPPER ─── */
+    .wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
     /* ─── HERO ─── */
     .hero {
+      background: var(--creme);
+    }
+    .hero-inner {
+      max-width: 1200px;
+      margin: 0 auto;
       display: grid;
-      grid-template-columns: 1fr 420px;
+      grid-template-columns: 1fr 400px;
       min-height: calc(100vh - 64px);
       align-items: center;
-      background: var(--creme);
+      gap: 48px;
+      padding: 0 64px;
     }
 
     .hero-content {
-      padding: 80px 64px 80px 80px;
+      padding: 80px 0;
     }
 
     .hero-eyebrow {
@@ -182,8 +200,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 48px 48px 48px 24px;
-      background: var(--creme);
+      padding: 64px 0;
     }
 
     .hero-form-card {
@@ -572,36 +589,37 @@
     footer {
       background: var(--grafite-2);
       border-top: 1px solid rgba(255,255,255,0.06);
-      padding: 28px 80px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+      padding: 28px 64px;
       font-size: 13px;
       color: var(--lavanda-3);
     }
 
     /* ─── RESPONSIVE ─── */
     @media (max-width: 1100px) {
-      .hero { grid-template-columns: 1fr; min-height: auto; }
-      .hero-form-col { padding: 0 48px 64px; justify-content: flex-start; }
-      .hero-content { padding: 64px 48px 40px; }
+      .nav-inner { padding: 0 40px; }
+      .hero-inner { grid-template-columns: 1fr; min-height: auto; padding: 0 40px; gap: 0; }
+      .hero-content { padding: 64px 0 40px; }
+      .hero-form-col { padding: 0 0 64px; justify-content: flex-start; }
       .hero-headline { font-size: 46px; }
+      .instructor-wrap { grid-template-columns: 1fr; gap: 40px; }
+      .instructor-photo { max-width: 280px; }
     }
     @media (max-width: 768px) {
-      nav { padding: 0 24px; }
-      .hero-content { padding: 48px 24px 32px; }
+      .nav-inner { padding: 0 24px; }
+      .hero-inner { padding: 0 24px; }
+      .hero-content { padding: 48px 0 32px; }
       .hero-headline { font-size: 36px; }
-      .hero-form-col { padding: 0 24px 56px; }
+      .hero-form-col { padding: 0 0 56px; }
       .hero-form-card { max-width: 100%; }
-      .strip { padding: 32px 24px; gap: 28px; }
+      .strip { padding: 32px 24px; }
       .strip-sep { display: none; }
       .section { padding: 64px 24px; }
       .learn-grid { grid-template-columns: 1fr; gap: 12px; }
       .forwho-grid { grid-template-columns: 1fr; }
-      .instructor-wrap { grid-template-columns: 1fr; gap: 40px; }
-      .instructor-photo { max-width: 260px; }
+      .instructor-photo { max-width: 240px; }
       .bottom-form-card { padding: 32px 24px; }
-      footer { flex-direction: column; gap: 8px; text-align: center; padding: 24px; }
+      footer { padding: 24px; }
+      footer .wrap { justify-content: center; text-align: center; }
     }
   </style>
 </head>
@@ -609,12 +627,15 @@
 
   <!-- NAV -->
   <nav>
-    <span class="nav-brand">Carol <em>Rosignoli</em></span>
-    <a href="#inscricao" class="nav-cta">Garantir minha vaga</a>
+    <div class="nav-inner">
+      <span class="nav-brand">Carol <em>Rosignoli</em></span>
+      <a href="#inscricao" class="nav-cta">Garantir minha vaga</a>
+    </div>
   </nav>
 
   <!-- HERO -->
   <section class="hero">
+    <div class="hero-inner">
     <div class="hero-content">
       <div class="hero-eyebrow">Workshop gratuito · Online · Ao vivo</div>
       <h1 class="hero-headline">
@@ -678,10 +699,12 @@
         </div>
       </div>
     </div>
+    </div><!-- /.hero-inner -->
   </section>
 
   <!-- STRIP -->
   <div class="strip">
+    <div class="wrap" style="display:flex;align-items:center;justify-content:center;gap:56px;flex-wrap:wrap;">
     <div class="strip-item">
       <div class="strip-num">20+</div>
       <div class="strip-label">anos de docência</div>
@@ -701,10 +724,12 @@
       <div class="strip-num">USP</div>
       <div class="strip-label">formação em licenciatura</div>
     </div>
+    </div><!-- /.wrap -->
   </div>
 
   <!-- O QUE VOCÊ VAI APRENDER -->
   <section class="section section-creme">
+    <div class="wrap">
     <div class="eyebrow">Conteúdo do workshop</div>
     <h2 class="s-title">O que você vai aprender<br><em>em uma tarde</em></h2>
     <div class="learn-grid">
@@ -724,10 +749,12 @@
         <div class="learn-body">Como traduzir objetivos de negócio em objetivos de aprendizagem e demonstrar que seus treinamentos moveram receita, cortaram custo ou aumentaram eficiência.</div>
       </div>
     </div>
+    </div><!-- /.wrap -->
   </section>
 
   <!-- PARA QUEM É -->
   <section class="section section-warm">
+    <div class="wrap">
     <div class="eyebrow">Para quem é</div>
     <h2 class="s-title">Este workshop foi feito<br>para <em>você</em> se…</h2>
     <div class="forwho-grid">
@@ -760,10 +787,12 @@
         </div>
       </div>
     </div>
+    </div><!-- /.wrap -->
   </section>
 
   <!-- INSTRUTORA -->
   <section class="section section-dark">
+    <div class="wrap">
     <div class="instructor-wrap">
       <div class="instructor-photo">
         <div class="instructor-photo-bg">CR</div>
@@ -798,10 +827,12 @@
         </div>
       </div>
     </div>
+    </div><!-- /.wrap -->
   </section>
 
   <!-- BOTTOM FORM -->
   <section class="section section-pale">
+    <div class="wrap">
     <div class="bottom-cta">
       <div class="eyebrow" style="justify-content:center;">Inscrição gratuita</div>
       <h2 class="s-title" style="text-align:center;">Pronto para transformar<br>seus <em>treinamentos?</em></h2>
@@ -843,11 +874,14 @@
         </div>
       </div>
     </div>
+    </div><!-- /.wrap -->
   </section>
 
   <footer>
-    <span>© 2025 Carol Rosignoli · Workshop Gratuito</span>
-    <span>Todos os direitos reservados</span>
+    <div class="wrap" style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;">
+      <span>© 2025 Carol Rosignoli · Workshop Gratuito</span>
+      <span>Todos os direitos reservados</span>
+    </div>
   </footer>
 
   <script>
