@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Workshop Gratuito — Aluno é tudo igual. Aluno é tudo diferente. | Carol Rosignoli</title>
+  <meta name="description" content="Workshop gratuito para profissionais de RH e T&D: aprenda a criar e conduzir treinamentos com máxima retenção e engajamento, conectados aos resultados do negócio." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy: #2d2a45;
+      --navy-dark: #231f38;
+      --navy-mid: #352f50;
+      --navy-light: #3a3560;
+      --rose: #c48899;
+      --rose-light: #d4a8b8;
+      --rose-muted: #9870a0;
+      --text-primary: #f0eef8;
+      --text-muted: #b8b0cc;
+      --text-subtle: #9890b0;
+      --text-faint: #5a5070;
+      --border: #4a4268;
+      --cream: #f7f5f0;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--navy);
+      color: var(--text-primary);
+      line-height: 1.6;
+    }
+
+    /* ─── HERO ─── */
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 400px;
+      min-height: 640px;
+      align-items: center;
+    }
+
+    .hero-left {
+      padding: 72px 56px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .hero-right {
+      background: var(--navy-dark);
+      border-left: 1px solid var(--border);
+      padding: 56px 44px;
+      align-self: stretch;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .hero-form-title {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 22px;
+      font-weight: 400;
+      color: var(--text-primary);
+      margin-bottom: 4px;
+    }
+    .hero-form-title span { color: var(--rose); }
+    .hero-form-subtitle {
+      font-size: 13px;
+      color: var(--text-subtle);
+      margin-bottom: 28px;
+    }
+
+    .hero-bullets {
+      list-style: none;
+      margin-bottom: 32px;
+    }
+    .hero-bullets li {
+      font-size: 14px;
+      color: var(--text-muted);
+      padding: 6px 0;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      line-height: 1.5;
+    }
+    .hero-bullets li::before {
+      content: '';
+      display: block;
+      width: 6px;
+      height: 6px;
+      min-width: 6px;
+      border-radius: 50%;
+      background: var(--rose);
+      margin-top: 6px;
+    }
+
+    .logo-mark {
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--rose);
+      margin-bottom: 48px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .logo-mark::before {
+      content: '';
+      display: block;
+      width: 36px;
+      height: 1px;
+      background: var(--rose);
+    }
+    .logo-mark::after {
+      content: '';
+      display: block;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--rose);
+    }
+
+    .badge {
+      display: inline-block;
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--rose);
+      border: 1px solid var(--rose);
+      padding: 6px 18px;
+      border-radius: 20px;
+      margin-bottom: 28px;
+      width: fit-content;
+    }
+
+    .hero-title {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 52px;
+      font-weight: 400;
+      line-height: 1.15;
+      color: var(--text-primary);
+      margin-bottom: 20px;
+    }
+    .hero-title .acc1 { color: var(--rose); }
+    .hero-title .acc2 { color: var(--rose-light); }
+
+    .hero-sub {
+      font-size: 15px;
+      color: var(--text-muted);
+      line-height: 1.75;
+      max-width: 500px;
+      margin-bottom: 44px;
+    }
+
+    .btn-primary {
+      display: inline-block;
+      background: var(--rose);
+      color: var(--navy-dark);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 18px 40px;
+      border-radius: 4px;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      width: fit-content;
+    }
+
+    /* ─── SECTIONS ─── */
+    .section { padding: 80px 56px; }
+    .section-light { background: var(--cream); color: var(--navy); }
+    .section-dark  { background: var(--navy-dark); }
+    .section-mid   { background: var(--navy-mid); }
+
+    .section-label {
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--rose);
+      margin-bottom: 12px;
+    }
+    .section-label-dark { color: var(--rose-muted); }
+
+    .section-title {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 36px;
+      font-weight: 400;
+      line-height: 1.3;
+      margin-bottom: 16px;
+    }
+    .section-title .acc { color: var(--rose); }
+    .section-title-light { color: var(--navy); }
+
+    .section-body {
+      font-size: 15px;
+      line-height: 1.75;
+      max-width: 620px;
+    }
+    .section-body-light { color: #5a5070; }
+    .section-body-dark  { color: var(--text-muted); }
+
+    .divider {
+      width: 40px;
+      height: 2px;
+      background: var(--rose);
+      margin-bottom: 28px;
+    }
+
+    /* ─── FOR WHO ─── */
+    .for-who-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-top: 40px;
+      max-width: 720px;
+    }
+
+    .for-who-item {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      background: #fff;
+      border: 0.5px solid #ddd8ec;
+      border-radius: 8px;
+      padding: 20px;
+    }
+
+    .fw-dot {
+      width: 8px;
+      height: 8px;
+      min-width: 8px;
+      border-radius: 50%;
+      background: var(--rose);
+      margin-top: 6px;
+    }
+
+    .fw-text {
+      font-size: 14px;
+      color: #3d3555;
+      line-height: 1.55;
+    }
+
+    /* ─── OUTCOMES ─── */
+    .outcomes-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 52px;
+    }
+
+    .outcome-card {
+      background: var(--navy);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 32px 28px;
+    }
+
+    .outcome-num {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 44px;
+      font-weight: 300;
+      color: var(--rose);
+      line-height: 1;
+      margin-bottom: 12px;
+    }
+
+    .outcome-title {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 10px;
+    }
+
+    .outcome-desc {
+      font-size: 13px;
+      color: var(--text-subtle);
+      line-height: 1.65;
+    }
+
+    /* ─── PROFESSOR ─── */
+    .prof-section {
+      display: grid;
+      grid-template-columns: 340px 1fr;
+      gap: 72px;
+      align-items: center;
+      padding: 80px 56px;
+      background: var(--navy);
+    }
+
+    .prof-avatar {
+      width: 100%;
+      aspect-ratio: 1;
+      background: linear-gradient(145deg, #7a4060, #c48899);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 72px;
+      font-weight: 300;
+      color: rgba(255,255,255,0.85);
+      letter-spacing: 4px;
+    }
+
+    .prof-name {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 36px;
+      font-weight: 400;
+      color: var(--text-primary);
+      margin-bottom: 4px;
+    }
+    .prof-name span { color: var(--rose); }
+
+    .prof-role {
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--text-subtle);
+      margin-bottom: 28px;
+    }
+
+    .prof-bio {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.8;
+      margin-bottom: 20px;
+      max-width: 540px;
+    }
+
+    .prof-stats {
+      display: flex;
+      gap: 36px;
+      margin-top: 32px;
+    }
+
+    .prof-stat-num {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 32px;
+      font-weight: 400;
+      color: var(--rose);
+      line-height: 1.1;
+    }
+
+    .prof-stat-label {
+      font-size: 11px;
+      color: var(--text-subtle);
+      line-height: 1.5;
+      margin-top: 4px;
+    }
+
+    /* ─── FORM ─── */
+    .form-section {
+      background: var(--navy-dark);
+      padding: 88px 56px;
+      text-align: center;
+    }
+
+    .free-tag {
+      display: inline-block;
+      background: rgba(196,136,153,0.15);
+      color: var(--rose);
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 8px 18px;
+      border-radius: 4px;
+      margin-bottom: 28px;
+    }
+
+    .form-title {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 40px;
+      font-weight: 400;
+      color: var(--text-primary);
+      margin-bottom: 12px;
+    }
+    .form-title span { color: var(--rose); }
+
+    .form-subtitle {
+      font-size: 15px;
+      color: var(--text-subtle);
+      margin-bottom: 52px;
+    }
+
+    .form-card {
+      background: var(--navy);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 48px 44px;
+      max-width: 560px;
+      margin: 0 auto;
+      text-align: left;
+    }
+
+    .form-row { margin-bottom: 22px; }
+
+    .form-label {
+      display: block;
+      font-size: 11px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--text-subtle);
+      margin-bottom: 8px;
+    }
+
+    .form-input,
+    .form-select {
+      width: 100%;
+      background: var(--navy-dark);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 14px 16px;
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      color: var(--text-primary);
+      outline: none;
+      transition: border-color 0.2s;
+      appearance: none;
+    }
+    .form-input::placeholder { color: var(--text-faint); }
+    .form-input:focus,
+    .form-select:focus { border-color: var(--rose); }
+
+    .form-btn {
+      width: 100%;
+      background: var(--rose);
+      color: var(--navy-dark);
+      border: none;
+      border-radius: 6px;
+      padding: 18px;
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      cursor: pointer;
+      margin-top: 8px;
+    }
+    .form-btn:hover { background: #b07585; }
+
+    .form-note {
+      font-size: 12px;
+      color: var(--text-faint);
+      text-align: center;
+      margin-top: 16px;
+    }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: #1a1730;
+      padding: 32px 56px;
+      text-align: center;
+      font-size: 13px;
+      color: var(--text-faint);
+    }
+    footer span { color: var(--rose); }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; }
+      .hero-right { display: none; }
+      .hero-left { padding: 48px 28px; }
+      .hero-title { font-size: 38px; }
+      .section { padding: 56px 28px; }
+      .outcomes-grid { grid-template-columns: 1fr; }
+      .for-who-grid { grid-template-columns: 1fr; }
+      .prof-section { grid-template-columns: 1fr; padding: 56px 28px; gap: 40px; }
+      .prof-avatar { max-width: 220px; }
+      .form-section { padding: 56px 28px; }
+      .form-card { padding: 32px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-left">
+      <div class="logo-mark">Carol Rosignoli</div>
+      <div class="badge">Workshop gratuito · Online · Ao vivo</div>
+      <h1 class="hero-title">
+        Aprenda a criar treinamentos<br>
+        que <span class="acc1">engajam</span> e geram<br>
+        <span class="acc2">resultados reais</span>
+      </h1>
+      <p class="hero-sub">
+        Em um único workshop gratuito, você vai sair com um método completo para planejar, criar e conduzir treinamentos que as pessoas realmente absorvem — e que movem os indicadores que a empresa acompanha.
+      </p>
+      <ul class="hero-bullets">
+        <li>Crie treinamentos sobre qualquer tema, mesmo sem ser especialista no assunto</li>
+        <li>Aplique ciência da aprendizagem para maximizar retenção e engajamento da audiência</li>
+        <li>Conecte cada treinamento a objetivos de negócio: receita, custo, eficiência</li>
+        <li>Obtenha NPS máximo e visibilidade dentro da empresa</li>
+      </ul>
+      <div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;">
+        <a href="#form-hero" class="btn-primary">Garantir minha vaga grátis →</a>
+        <span style="font-size:13px; color:var(--text-faint);">Vagas limitadas · Sem cartão</span>
+      </div>
+    </div>
+
+    <div class="hero-right">
+      <p class="hero-form-title">Reserve sua <span>vaga agora</span></p>
+      <p class="hero-form-subtitle">100% gratuito · Preencha em 30 segundos</p>
+      <form id="lead-form-hero" action="https://formspree.io/f/mvznykpv" method="POST">
+        <div class="form-row">
+          <label class="form-label" for="nome-hero">Nome completo</label>
+          <input class="form-input" type="text" id="nome-hero" name="nome" placeholder="Seu nome" required />
+        </div>
+        <div class="form-row">
+          <label class="form-label" for="email-hero">E-mail profissional</label>
+          <input class="form-input" type="email" id="email-hero" name="email" placeholder="voce@empresa.com" required />
+        </div>
+        <div class="form-row">
+          <label class="form-label" for="empresa-hero">Empresa</label>
+          <input class="form-input" type="text" id="empresa-hero" name="empresa" placeholder="Nome da empresa" />
+        </div>
+        <div class="form-row">
+          <label class="form-label" for="cargo-hero">Cargo</label>
+          <select class="form-select" id="cargo-hero" name="cargo">
+            <option value="" disabled selected>Selecione seu cargo</option>
+            <option>Analista de RH / T&D</option>
+            <option>Coordenador(a) de RH / T&D</option>
+            <option>Gerente de RH / T&D</option>
+            <option>Diretor(a) de RH / T&D</option>
+            <option>Outro cargo em RH</option>
+          </select>
+        </div>
+        <button class="form-btn" type="submit" id="form-btn-hero">Quero minha vaga gratuita →</button>
+        <p class="form-note">Seus dados estão seguros. Sem spam.</p>
+      </form>
+      <div id="form-success-hero" style="display:none; text-align:center; padding: 40px 0;">
+        <p style="font-size: 32px; margin-bottom: 12px;">✓</p>
+        <p style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 20px; color: var(--rose); margin-bottom: 8px;">Vaga reservada!</p>
+        <p style="font-size: 13px; color: var(--text-muted);">Fique de olho no seu e-mail — vamos enviar todos os detalhes em breve.</p>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    function setupForm(formId, btnId, successId) {
+      const form = document.getElementById(formId);
+      const btn = document.getElementById(btnId);
+      const success = document.getElementById(successId);
+      if (!form) return;
+      form.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        btn.textContent = 'Enviando...';
+        btn.disabled = true;
+        const res = await fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { 'Accept': 'application/json' }
+        });
+        if (res.ok) {
+          form.style.display = 'none';
+          success.style.display = 'block';
+        } else {
+          btn.textContent = 'Erro. Tente novamente.';
+          btn.disabled = false;
+        }
+      });
+    }
+    setupForm('lead-form-hero', 'form-btn-hero', 'form-success-hero');
+    setupForm('lead-form', 'form-btn', 'form-success');
+  </script>
+
+  <!-- PARA QUEM É -->
+  <section class="section section-light">
+    <p class="section-label section-label-dark">Para quem é este workshop</p>
+    <h2 class="section-title section-title-light">Feito para profissionais de <span class="acc">RH e T&amp;D</span></h2>
+    <p class="section-body section-body-light">
+      Se você cria ou aplica treinamentos corporativos — e quer que eles gerem resultados de verdade — este workshop foi desenhado para você.
+    </p>
+    <div class="for-who-grid">
+      <div class="for-who-item"><div class="fw-dot"></div><div class="fw-text">Profissionais de RH que precisam treinar times, mas não são especialistas no tema do treinamento</div></div>
+      <div class="for-who-item"><div class="fw-dot"></div><div class="fw-text">Analistas e gestores de T&amp;D que querem aumentar o engajamento e a retenção dos participantes</div></div>
+      <div class="for-who-item"><div class="fw-dot"></div><div class="fw-text">Líderes de aprendizagem que precisam conectar treinamentos a indicadores reais de negócio</div></div>
+      <div class="for-who-item"><div class="fw-dot"></div><div class="fw-text">Quem quer estruturar treinamentos com base em ciência da aprendizagem, não em intuição</div></div>
+    </div>
+  </section>
+
+  <!-- O QUE VAI APRENDER -->
+  <section class="section section-mid">
+    <p class="section-label">O que você vai aprender</p>
+    <h2 class="section-title">Três pilares para <span class="acc">transformar</span> seus treinamentos</h2>
+    <div class="outcomes-grid">
+      <div class="outcome-card">
+        <div class="outcome-num">01</div>
+        <div class="outcome-title">Criar com as melhores práticas</div>
+        <div class="outcome-desc">Estruture qualquer treinamento com base na ciência da aprendizagem e nas metodologias mais eficazes do mercado — independente do setor ou tema.</div>
+      </div>
+      <div class="outcome-card">
+        <div class="outcome-num">02</div>
+        <div class="outcome-title">Conduzir com máxima retenção</div>
+        <div class="outcome-desc">Aprenda as técnicas que garantem engajamento real da audiência, mesmo em temas áridos, e saiba como aplicá-las mesmo que você não seja o especialista no assunto.</div>
+      </div>
+      <div class="outcome-card">
+        <div class="outcome-num">03</div>
+        <div class="outcome-title">Conectar ao negócio</div>
+        <div class="outcome-desc">Descubra como alinhar objetivos de aprendizagem a indicadores que a empresa acompanha — receita, custos, eficiência — e mostrar o impacto real do T&amp;D.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROFESSORA -->
+  <section class="prof-section">
+    <div class="prof-avatar">CR</div>
+    <div>
+      <div class="divider"></div>
+      <p class="section-label">A professora</p>
+      <h2 class="prof-name">Carolina <span>Rosignoli</span></h2>
+      <p class="prof-role">Professora formada pela USP · Líder de T&amp;D</p>
+      <p class="prof-bio">
+        15 anos em sala de aula, coordenadora de escolas, autora de materiais didáticos e formadora de professores da rede pública. Há 10 anos no mundo corporativo como liderança de T&amp;D, Carol aplica na prática as mesmas técnicas de ensino que desenvolveu ao longo de 20 anos de docência — agora para adultos em ambiente corporativo.
+      </p>
+      <p class="prof-bio">
+        Acumulou treinamentos com nota máxima de NPS e chegou a posições de alta liderança exatamente por sua capacidade de engajar pessoas em conteúdos que importam para o negócio.
+      </p>
+      <div class="prof-stats">
+        <div>
+          <div class="prof-stat-num">20+</div>
+          <div class="prof-stat-label">anos de<br>docência</div>
+        </div>
+        <div>
+          <div class="prof-stat-num">10</div>
+          <div class="prof-stat-label">anos em<br>T&amp;D corporativo</div>
+        </div>
+        <div>
+          <div class="prof-stat-num">NPS</div>
+          <div class="prof-stat-label">máximo em todos<br>os treinamentos</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FORMULÁRIO -->
+  <section class="form-section" id="form">
+    <div class="free-tag">100% gratuito · Vagas limitadas</div>
+    <h2 class="form-title">Reserve sua <span>vaga agora</span></h2>
+    <p class="form-subtitle">Preencha o formulário e garanta seu lugar no workshop</p>
+    <div class="form-card">
+      <form id="lead-form" action="https://formspree.io/f/mvznykpv" method="POST">
+        <div class="form-row">
+          <label class="form-label" for="nome">Nome completo</label>
+          <input class="form-input" type="text" id="nome" name="nome" placeholder="Seu nome" required />
+        </div>
+        <div class="form-row">
+          <label class="form-label" for="email">E-mail profissional</label>
+          <input class="form-input" type="email" id="email" name="email" placeholder="voce@empresa.com" required />
+        </div>
+        <div class="form-row">
+          <label class="form-label" for="empresa">Empresa</label>
+          <input class="form-input" type="text" id="empresa" name="empresa" placeholder="Nome da sua empresa" />
+        </div>
+        <div class="form-row">
+          <label class="form-label" for="cargo">Cargo</label>
+          <select class="form-select" id="cargo" name="cargo">
+            <option value="" disabled selected>Selecione seu cargo</option>
+            <option>Analista de RH / T&D</option>
+            <option>Coordenador(a) de RH / T&D</option>
+            <option>Gerente de RH / T&D</option>
+            <option>Diretor(a) de RH / T&D</option>
+            <option>Outro cargo em RH</option>
+          </select>
+        </div>
+        <button class="form-btn" type="submit" id="form-btn">Quero minha vaga gratuita →</button>
+        <p class="form-note" id="form-note">Seus dados estão seguros. Sem spam, prometemos.</p>
+      </form>
+      <div id="form-success" style="display:none; text-align:center; padding: 32px 0;">
+        <div style="font-size: 32px; margin-bottom: 16px;">✓</div>
+        <p style="font-size: 18px; font-family: 'Cormorant Garamond', Georgia, serif; color: var(--rose); margin-bottom: 8px;">Vaga reservada!</p>
+        <p style="font-size: 14px; color: var(--text-muted);">Fique de olho no seu e-mail — vamos enviar todos os detalhes em breve.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    Workshop gratuito · <span>Aluno é tudo igual. Aluno é tudo diferente.</span> · Por Carol Rosignoli
+  </footer>
+
+</body>
+</html>
