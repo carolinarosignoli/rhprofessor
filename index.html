@@ -7,124 +7,129 @@
   <meta name="description" content="Workshop gratuito para profissionais de RH e T&D: aprenda a criar e conduzir treinamentos com máxima retenção, engajamento e resultados de negócio." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,700;0,9..144,900;1,9..144,300;1,9..144,400;1,9..144,700;1,9..144,900&family=Hanken+Grotesque:wght@400;500;600&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --navy:      #25223a;
-      --navy-2:    #1e1b30;
-      --navy-3:    #2f2b47;
-      --rose:      #c4849a;
-      --rose-2:    #d9a8b8;
-      --rose-bg:   rgba(196,132,154,0.12);
-      --text-1:    #f2f0f9;
-      --text-2:    #b9b2d0;
-      --text-3:    #8880a8;
-      --text-4:    #534d70;
-      --border:    rgba(255,255,255,0.08);
-      --border-2:  rgba(255,255,255,0.14);
-      --cream:     #f8f6f1;
-      --cream-2:   #efecе6;
+      --creme:        #F5EEDE;
+      --creme-warm:   #EFE5CF;
+      --creme-pale:   #FAF5E8;
+      --grafite:      #241F2E;
+      --grafite-2:    #2D2840;
+      --lavanda:      #5E547A;
+      --lavanda-2:    #756B92;
+      --lavanda-3:    #938AAB;
+      --rosa:         #A76D8C;
+      --rosa-2:       #C195AB;
+      --rosa-deep:    #845572;
+      --azul:         #1F3A4D;
+      --linha:        #D9CDB0;
+      --card:         #FFFCF4;
+      --text-body:    #3A4254;
+      --text-muted:   #6B6E7E;
+      --text-faint:   #9A93A0;
+      --text-dark-muted: #BDB7CC;
     }
 
     html { scroll-behavior: smooth; }
-    body { font-family: 'Inter', sans-serif; background: var(--navy); color: var(--text-1); line-height: 1.6; -webkit-font-smoothing: antialiased; }
-
-    /* ─── TYPOGRAPHY ─── */
-    .serif { font-family: 'Cormorant Garamond', Georgia, serif; }
+    body {
+      font-family: 'Hanken Grotesque', system-ui, sans-serif;
+      background: var(--creme);
+      color: var(--text-body);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
 
     /* ─── NAV ─── */
     nav {
-      padding: 20px 40px;
+      background: var(--creme);
+      border-bottom: 1px solid var(--linha);
+      padding: 0 64px;
+      height: 64px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      border-bottom: 1px solid var(--border);
       position: sticky;
       top: 0;
-      background: var(--navy);
       z-index: 100;
     }
     .nav-brand {
-      font-family: 'Cormorant Garamond', Georgia, serif;
-      font-size: 18px;
-      font-weight: 400;
-      color: var(--text-1);
-      letter-spacing: 0.5px;
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--grafite);
+      letter-spacing: -0.3px;
     }
-    .nav-brand span { color: var(--rose); }
+    .nav-brand em {
+      font-style: italic;
+      color: var(--rosa);
+    }
     .nav-cta {
-      background: var(--rose);
-      color: var(--navy-2);
-      font-size: 12px;
+      background: var(--rosa);
+      color: #fff;
+      font-family: 'Hanken Grotesque', sans-serif;
+      font-size: 13px;
       font-weight: 600;
-      letter-spacing: 1px;
-      text-transform: uppercase;
+      letter-spacing: 0.5px;
       padding: 10px 24px;
       border-radius: 4px;
       border: none;
       cursor: pointer;
       text-decoration: none;
     }
+    .nav-cta:hover { background: var(--rosa-deep); }
 
     /* ─── HERO ─── */
     .hero {
       display: grid;
-      grid-template-columns: 1fr 440px;
-      gap: 0;
-      min-height: calc(100vh - 61px);
+      grid-template-columns: 1fr 420px;
+      min-height: calc(100vh - 64px);
       align-items: center;
+      background: var(--creme);
     }
 
     .hero-content {
-      padding: 72px 64px 72px 80px;
-    }
-
-    .hero-form-col {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 48px 40px;
+      padding: 80px 64px 80px 80px;
     }
 
     .hero-eyebrow {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
+      gap: 10px;
       font-size: 11px;
       font-weight: 600;
-      letter-spacing: 2px;
+      letter-spacing: 2.5px;
       text-transform: uppercase;
-      color: var(--rose);
+      color: var(--rosa);
       margin-bottom: 28px;
     }
     .hero-eyebrow::before {
       content: '';
       display: block;
-      width: 24px;
+      width: 28px;
       height: 1.5px;
-      background: var(--rose);
+      background: var(--rosa);
     }
 
     .hero-headline {
-      font-family: 'Cormorant Garamond', Georgia, serif;
-      font-size: 58px;
-      font-weight: 400;
-      line-height: 1.1;
-      color: var(--text-1);
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: 60px;
+      font-weight: 900;
+      line-height: 1.05;
+      color: var(--grafite);
+      letter-spacing: -1px;
       margin-bottom: 24px;
-      letter-spacing: -0.5px;
     }
     .hero-headline em {
       font-style: italic;
-      color: var(--rose-2);
+      color: var(--rosa);
     }
 
     .hero-sub {
-      font-size: 16px;
-      color: var(--text-2);
-      line-height: 1.75;
+      font-size: 17px;
+      color: var(--text-muted);
+      line-height: 1.7;
       max-width: 480px;
       margin-bottom: 40px;
     }
@@ -134,86 +139,93 @@
       margin-bottom: 48px;
     }
     .hero-bullets li {
-      font-size: 14px;
-      color: var(--text-2);
+      font-size: 15px;
+      color: var(--text-body);
       display: flex;
       align-items: flex-start;
       gap: 12px;
-      padding: 7px 0;
+      padding: 8px 0;
+      border-bottom: 1px solid var(--linha);
     }
-    .bullet-check {
+    .hero-bullets li:first-child { border-top: 1px solid var(--linha); }
+    .check {
+      width: 20px;
+      height: 20px;
+      min-width: 20px;
+      border-radius: 50%;
+      background: var(--rosa);
+      color: #fff;
+      font-size: 10px;
       display: flex;
       align-items: center;
       justify-content: center;
-      width: 18px;
-      height: 18px;
-      min-width: 18px;
-      border-radius: 50%;
-      background: var(--rose-bg);
-      color: var(--rose);
-      font-size: 10px;
       margin-top: 2px;
     }
 
     .hero-meta {
       display: flex;
       align-items: center;
-      gap: 24px;
+      gap: 8px;
       flex-wrap: wrap;
     }
-    .meta-item {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 13px;
-      color: var(--text-3);
-    }
-    .meta-dot {
-      width: 4px;
-      height: 4px;
-      border-radius: 50%;
-      background: var(--text-4);
+    .meta-pill {
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--lavanda);
+      background: rgba(94,84,122,0.1);
+      padding: 6px 14px;
+      border-radius: 20px;
     }
 
-    /* ─── HERO FORM PANEL ─── */
-    .hero-form-panel {
-      background: #ffffff;
+    /* ─── HERO FORM ─── */
+    .hero-form-col {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 48px 48px 48px 24px;
+      background: var(--creme);
+    }
+
+    .hero-form-card {
+      background: var(--card);
+      border: 1px solid var(--linha);
       border-radius: 16px;
       padding: 40px 36px;
       width: 100%;
-      max-width: 400px;
-      box-shadow: 0 24px 64px rgba(0,0,0,0.35), 0 4px 16px rgba(0,0,0,0.2);
+      max-width: 380px;
+      box-shadow: 0 8px 32px rgba(36,31,46,0.10), 0 2px 8px rgba(36,31,46,0.06);
     }
 
-    .panel-tag {
+    .card-tag {
       display: inline-block;
-      background: #fdf0f3;
-      color: #b06878;
+      background: rgba(167,109,140,0.1);
+      color: var(--rosa-deep);
       font-size: 10px;
       font-weight: 600;
-      letter-spacing: 1.5px;
+      letter-spacing: 2px;
       text-transform: uppercase;
-      padding: 6px 14px;
+      padding: 5px 12px;
       border-radius: 3px;
-      margin-bottom: 20px;
-      width: fit-content;
+      margin-bottom: 18px;
     }
 
-    .panel-title {
-      font-family: 'Cormorant Garamond', Georgia, serif;
+    .card-title {
+      font-family: 'Fraunces', Georgia, serif;
       font-size: 26px;
-      font-weight: 500;
-      color: #25223a;
-      line-height: 1.25;
+      font-weight: 700;
+      color: var(--grafite);
+      line-height: 1.2;
       margin-bottom: 4px;
     }
-    .panel-sub {
+    .card-title em { font-style: italic; color: var(--rosa); }
+
+    .card-sub {
       font-size: 13px;
-      color: #9890b0;
+      color: var(--text-faint);
       margin-bottom: 28px;
     }
 
-    /* ─── FORM ─── */
+    /* ─── FORM ELEMENTS ─── */
     .f-group { margin-bottom: 14px; }
     .f-label {
       display: block;
@@ -221,191 +233,190 @@
       font-weight: 600;
       letter-spacing: 1px;
       text-transform: uppercase;
-      color: #8880a8;
+      color: var(--text-faint);
       margin-bottom: 6px;
     }
-    .hero-form-panel .f-label { color: #9890b0; }
-
     .f-input, .f-select {
       width: 100%;
-      background: var(--navy-3);
-      border: 1px solid var(--border-2);
+      background: var(--creme-pale);
+      border: 1px solid var(--linha);
       border-radius: 6px;
-      padding: 12px 14px;
-      font-family: 'Inter', sans-serif;
+      padding: 11px 14px;
+      font-family: 'Hanken Grotesque', sans-serif;
       font-size: 14px;
-      color: var(--text-1);
+      color: var(--grafite);
       outline: none;
-      transition: border-color 0.15s;
+      transition: border-color 0.15s, background 0.15s;
       appearance: none;
     }
-    .f-input::placeholder { color: var(--text-4); }
-    .f-input:focus, .f-select:focus { border-color: var(--rose); }
-
-    /* inputs inside white card */
-    .hero-form-panel .f-input,
-    .hero-form-panel .f-select {
-      background: #f8f6fb;
-      border: 1px solid #e2ddf0;
-      color: #25223a;
+    .f-input::placeholder { color: var(--text-faint); }
+    .f-input:focus, .f-select:focus {
+      border-color: var(--rosa);
+      background: #fff;
     }
-    .hero-form-panel .f-input::placeholder { color: #bbb5d0; }
-    .hero-form-panel .f-input:focus,
-    .hero-form-panel .f-select:focus { border-color: var(--rose); background: #fff; }
-    .hero-form-panel .f-note { color: #b0aac8; }
-    .f-select { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%238880a8' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; padding-right: 36px; }
+    .f-select {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11' height='7' viewBox='0 0 11 7'%3E%3Cpath d='M1 1l4.5 4.5L10 1' stroke='%239A93A0' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 14px center;
+      padding-right: 36px;
+      cursor: pointer;
+    }
     .f-btn {
       width: 100%;
-      background: var(--rose);
-      color: var(--navy-2);
+      background: var(--rosa);
+      color: #fff;
       border: none;
       border-radius: 6px;
-      padding: 16px;
-      font-family: 'Inter', sans-serif;
-      font-size: 13px;
-      font-weight: 700;
-      letter-spacing: 0.5px;
+      padding: 15px;
+      font-family: 'Hanken Grotesque', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
       cursor: pointer;
       margin-top: 8px;
-      transition: opacity 0.15s;
+      transition: background 0.15s;
     }
-    .f-btn:hover { opacity: 0.9; }
+    .f-btn:hover { background: var(--rosa-deep); }
     .f-btn:disabled { opacity: 0.6; cursor: default; }
     .f-note {
       font-size: 11px;
-      color: var(--text-4);
+      color: var(--text-faint);
       text-align: center;
       margin-top: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 5px;
     }
     .f-success {
       text-align: center;
-      padding: 48px 0;
+      padding: 32px 0;
     }
     .f-success-icon {
-      width: 52px;
-      height: 52px;
+      width: 52px; height: 52px;
       border-radius: 50%;
-      background: var(--rose-bg);
-      color: var(--rose);
-      font-size: 22px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto 20px;
+      background: rgba(167,109,140,0.12);
+      color: var(--rosa);
+      font-size: 20px;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 18px;
     }
     .f-success-title {
-      font-family: 'Cormorant Garamond', Georgia, serif;
-      font-size: 26px;
-      color: var(--text-1);
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--grafite);
       margin-bottom: 8px;
     }
-    .f-success-sub { font-size: 14px; color: var(--text-2); line-height: 1.6; }
+    .f-success-sub { font-size: 14px; color: var(--text-muted); line-height: 1.6; }
 
     /* ─── STRIP ─── */
     .strip {
-      background: var(--navy-2);
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-      padding: 32px 80px;
+      background: var(--grafite);
+      padding: 36px 80px;
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 64px;
+      gap: 56px;
       flex-wrap: wrap;
     }
-    .strip-item {
-      text-align: center;
-    }
+    .strip-item { text-align: center; }
     .strip-num {
-      font-family: 'Cormorant Garamond', Georgia, serif;
-      font-size: 40px;
-      font-weight: 400;
-      color: var(--rose);
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: 38px;
+      font-weight: 900;
+      color: var(--rosa-2);
       line-height: 1;
     }
     .strip-label {
       font-size: 12px;
-      color: var(--text-3);
+      color: var(--text-dark-muted);
       margin-top: 4px;
     }
-    .strip-divider {
+    .strip-sep {
       width: 1px;
       height: 48px;
-      background: var(--border);
+      background: rgba(255,255,255,0.1);
     }
 
     /* ─── SECTIONS ─── */
     .section { padding: 96px 80px; }
-    .section-cream { background: var(--cream); color: var(--navy); }
-    .section-dark  { background: var(--navy-2); }
-    .section-mid   { background: var(--navy-3); }
+    .section-creme  { background: var(--creme); }
+    .section-warm   { background: var(--creme-warm); }
+    .section-pale   { background: var(--creme-pale); }
+    .section-dark   { background: var(--grafite); }
+    .section-azul   { background: var(--azul); }
 
-    .section-eyebrow {
+    .eyebrow {
       font-size: 11px;
       font-weight: 600;
-      letter-spacing: 2px;
+      letter-spacing: 2.5px;
       text-transform: uppercase;
-      color: var(--rose);
+      color: var(--rosa);
       margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
     }
-    .section-eyebrow-dark { color: #a07878; }
+    .eyebrow::before {
+      content: '';
+      display: block;
+      width: 22px;
+      height: 1.5px;
+      background: var(--rosa);
+    }
+    .eyebrow-light { color: var(--rosa-2); }
+    .eyebrow-light::before { background: var(--rosa-2); }
 
-    .section-title {
-      font-family: 'Cormorant Garamond', Georgia, serif;
-      font-size: 42px;
-      font-weight: 400;
-      line-height: 1.2;
+    .s-title {
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: 44px;
+      font-weight: 900;
+      line-height: 1.1;
+      letter-spacing: -0.5px;
+      color: var(--grafite);
       margin-bottom: 20px;
     }
-    .section-title em { font-style: italic; color: var(--rose-2); }
-    .section-title-dark { color: var(--navy); }
-    .section-title-dark em { color: #a05070; }
+    .s-title em { font-style: italic; color: var(--rosa); }
+    .s-title-light { color: var(--creme-pale); }
+    .s-title-light em { color: var(--rosa-2); }
 
-    .section-body {
+    .s-body {
       font-size: 16px;
       line-height: 1.75;
-      max-width: 600px;
+      max-width: 580px;
     }
-    .section-body-light { color: var(--text-2); }
-    .section-body-dark  { color: #5a5272; }
+    .s-body-dark  { color: var(--text-muted); }
+    .s-body-light { color: var(--text-dark-muted); }
 
-    /* ─── LEARN ─── */
+    /* ─── LEARN CARDS ─── */
     .learn-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 2px;
+      gap: 16px;
       margin-top: 64px;
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      overflow: hidden;
     }
     .learn-card {
-      background: var(--navy-2);
-      padding: 40px 36px;
+      background: var(--card);
+      border: 1px solid var(--linha);
+      border-radius: 12px;
+      padding: 36px 32px;
     }
     .learn-num {
-      font-family: 'Cormorant Garamond', Georgia, serif;
-      font-size: 48px;
-      font-weight: 300;
-      color: var(--rose);
-      opacity: 0.5;
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: 52px;
+      font-weight: 900;
+      font-style: italic;
+      color: var(--rosa);
+      opacity: 0.35;
       line-height: 1;
       margin-bottom: 20px;
     }
     .learn-title {
       font-size: 16px;
       font-weight: 600;
-      color: var(--text-1);
-      margin-bottom: 12px;
-      line-height: 1.35;
+      color: var(--grafite);
+      margin-bottom: 10px;
+      line-height: 1.3;
     }
     .learn-body {
       font-size: 14px;
-      color: var(--text-2);
+      color: var(--text-muted);
       line-height: 1.7;
     }
 
@@ -415,189 +426,180 @@
       grid-template-columns: 1fr 1fr;
       gap: 12px;
       margin-top: 48px;
-      max-width: 780px;
+      max-width: 800px;
     }
     .forwho-item {
-      background: #fff;
-      border: 1px solid #e8e4f0;
+      background: var(--card);
+      border: 1px solid var(--linha);
       border-radius: 10px;
       padding: 22px 24px;
       display: flex;
-      gap: 14px;
+      gap: 16px;
       align-items: flex-start;
     }
     .forwho-icon {
-      width: 36px;
-      height: 36px;
-      min-width: 36px;
+      width: 38px; height: 38px; min-width: 38px;
       border-radius: 8px;
-      background: #f3eff8;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 16px;
+      background: rgba(167,109,140,0.1);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 18px;
     }
-    .forwho-text {
+    .forwho-title {
       font-size: 14px;
-      color: #3d3560;
-      line-height: 1.55;
-      font-weight: 500;
+      font-weight: 600;
+      color: var(--grafite);
+      line-height: 1.4;
+      margin-bottom: 3px;
     }
     .forwho-sub {
       font-size: 13px;
-      color: #8880a8;
-      font-weight: 400;
-      margin-top: 2px;
+      color: var(--text-muted);
+      line-height: 1.5;
     }
 
     /* ─── INSTRUCTOR ─── */
     .instructor-wrap {
       display: grid;
-      grid-template-columns: 380px 1fr;
+      grid-template-columns: 360px 1fr;
       gap: 80px;
-      align-items: center;
+      align-items: start;
     }
     .instructor-photo {
       aspect-ratio: 4/5;
-      background: linear-gradient(160deg, #6a3558 0%, #b07888 60%, #cda0b0 100%);
+      background: linear-gradient(160deg, var(--lavanda) 0%, var(--rosa) 60%, var(--rosa-2) 100%);
       border-radius: 12px;
-      display: flex;
-      align-items: flex-end;
-      justify-content: flex-start;
-      padding: 28px;
       position: relative;
       overflow: hidden;
+      display: flex;
+      align-items: flex-end;
+      padding: 24px;
     }
-    .instructor-photo-initials {
-      font-family: 'Cormorant Garamond', Georgia, serif;
-      font-size: 120px;
-      font-weight: 300;
-      color: rgba(255,255,255,0.15);
+    .instructor-photo-bg {
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: 140px;
+      font-weight: 900;
+      font-style: italic;
+      color: rgba(250,245,232,0.12);
       position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -60%);
-      letter-spacing: 8px;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -58%);
+      letter-spacing: 4px;
       user-select: none;
+      white-space: nowrap;
     }
     .instructor-chip {
-      background: rgba(0,0,0,0.35);
-      border: 1px solid rgba(255,255,255,0.15);
-      border-radius: 6px;
-      padding: 10px 14px;
+      background: rgba(36,31,46,0.55);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 8px;
+      padding: 10px 16px;
       position: relative;
       z-index: 1;
     }
-    .chip-name {
-      font-size: 14px;
-      font-weight: 600;
-      color: #fff;
-    }
-    .chip-role {
-      font-size: 12px;
-      color: rgba(255,255,255,0.6);
-      margin-top: 2px;
-    }
+    .chip-name { font-size: 14px; font-weight: 600; color: #fff; }
+    .chip-role { font-size: 12px; color: rgba(255,255,255,0.55); margin-top: 2px; }
+
     .instructor-name {
-      font-family: 'Cormorant Garamond', Georgia, serif;
-      font-size: 44px;
-      font-weight: 400;
-      color: var(--text-1);
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: 42px;
+      font-weight: 900;
+      color: var(--creme-pale);
+      letter-spacing: -0.5px;
       margin-bottom: 4px;
     }
-    .instructor-name span { color: var(--rose); }
+    .instructor-name em { font-style: italic; color: var(--rosa-2); }
     .instructor-role {
-      font-size: 12px;
+      font-size: 11px;
       font-weight: 600;
       letter-spacing: 2px;
       text-transform: uppercase;
-      color: var(--text-3);
+      color: var(--text-dark-muted);
       margin-bottom: 28px;
     }
     .instructor-bio {
       font-size: 15px;
-      color: var(--text-2);
+      color: var(--text-dark-muted);
       line-height: 1.8;
-      margin-bottom: 16px;
       max-width: 520px;
+      margin-bottom: 16px;
     }
     .instructor-stats {
       display: flex;
       gap: 0;
       margin-top: 36px;
-      border: 1px solid var(--border);
+      border: 1px solid rgba(255,255,255,0.1);
       border-radius: 10px;
       overflow: hidden;
-      max-width: 420px;
+      max-width: 400px;
     }
     .istat {
       flex: 1;
-      padding: 20px 24px;
-      border-right: 1px solid var(--border);
+      padding: 18px 20px;
+      border-right: 1px solid rgba(255,255,255,0.1);
     }
     .istat:last-child { border-right: none; }
     .istat-num {
-      font-family: 'Cormorant Garamond', Georgia, serif;
-      font-size: 32px;
-      font-weight: 400;
-      color: var(--rose);
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: 30px;
+      font-weight: 900;
+      color: var(--rosa-2);
       line-height: 1;
     }
     .istat-label {
       font-size: 11px;
-      color: var(--text-3);
+      color: var(--text-dark-muted);
       margin-top: 4px;
       line-height: 1.4;
     }
 
-    /* ─── BOTTOM FORM ─── */
-    .bottom-form-wrap {
+    /* ─── BOTTOM CTA SECTION ─── */
+    .bottom-cta {
+      text-align: center;
       max-width: 560px;
       margin: 0 auto;
-      text-align: center;
     }
     .bottom-form-card {
-      background: var(--navy-3);
-      border: 1px solid var(--border-2);
+      background: var(--card);
+      border: 1px solid var(--linha);
       border-radius: 16px;
-      padding: 48px 44px;
+      padding: 44px 40px;
       margin-top: 48px;
       text-align: left;
+      box-shadow: 0 4px 24px rgba(36,31,46,0.07);
     }
 
     /* ─── FOOTER ─── */
     footer {
-      background: var(--navy-2);
-      border-top: 1px solid var(--border);
+      background: var(--grafite-2);
+      border-top: 1px solid rgba(255,255,255,0.06);
       padding: 28px 80px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       font-size: 13px;
-      color: var(--text-4);
+      color: var(--lavanda-3);
     }
-    footer a { color: var(--text-4); text-decoration: none; }
 
     /* ─── RESPONSIVE ─── */
-    @media (max-width: 1024px) {
+    @media (max-width: 1100px) {
       .hero { grid-template-columns: 1fr; min-height: auto; }
-      .hero-form-col { padding: 40px; border-top: 1px solid var(--border); }
-      .hero-content { padding: 64px 40px; }
-      .hero-headline { font-size: 44px; }
-      .instructor-wrap { grid-template-columns: 1fr; gap: 40px; }
-      .instructor-photo { max-width: 280px; }
+      .hero-form-col { padding: 0 48px 64px; justify-content: flex-start; }
+      .hero-content { padding: 64px 48px 40px; }
+      .hero-headline { font-size: 46px; }
     }
     @media (max-width: 768px) {
-      nav { padding: 16px 24px; }
-      .hero-content { padding: 48px 24px; }
+      nav { padding: 0 24px; }
+      .hero-content { padding: 48px 24px 32px; }
       .hero-headline { font-size: 36px; }
-      .hero-form-col { padding: 24px; }
-      .hero-form-panel { padding: 32px 24px; }
-      .strip { padding: 32px 24px; gap: 32px; }
-      .strip-divider { display: none; }
+      .hero-form-col { padding: 0 24px 56px; }
+      .hero-form-card { max-width: 100%; }
+      .strip { padding: 32px 24px; gap: 28px; }
+      .strip-sep { display: none; }
       .section { padding: 64px 24px; }
-      .learn-grid { grid-template-columns: 1fr; }
+      .learn-grid { grid-template-columns: 1fr; gap: 12px; }
       .forwho-grid { grid-template-columns: 1fr; }
+      .instructor-wrap { grid-template-columns: 1fr; gap: 40px; }
+      .instructor-photo { max-width: 260px; }
       .bottom-form-card { padding: 32px 24px; }
       footer { flex-direction: column; gap: 8px; text-align: center; padding: 24px; }
     }
@@ -607,168 +609,154 @@
 
   <!-- NAV -->
   <nav>
-    <span class="nav-brand">Carol <span>Rosignoli</span></span>
-    <a href="#inscricao" class="nav-cta">Garantir vaga grátis</a>
+    <span class="nav-brand">Carol <em>Rosignoli</em></span>
+    <a href="#inscricao" class="nav-cta">Garantir minha vaga</a>
   </nav>
 
   <!-- HERO -->
   <section class="hero">
     <div class="hero-content">
       <div class="hero-eyebrow">Workshop gratuito · Online · Ao vivo</div>
-      <h1 class="hero-headline serif">
-        Treinamentos que as pessoas<br>
-        <em>absorvem de verdade</em><br>
-        e movem o negócio
+      <h1 class="hero-headline">
+        Treinamentos que<br>
+        as pessoas <em>absorvem</em><br>
+        de verdade
       </h1>
       <p class="hero-sub">
         Um workshop para profissionais de RH e T&amp;D que querem parar de criar treinamentos genéricos e começar a entregar aprendizagem que transforma comportamento — e aparece nos indicadores da empresa.
       </p>
       <ul class="hero-bullets">
-        <li>
-          <span class="bullet-check">✓</span>
-          Crie treinamentos sobre qualquer tema, mesmo sem ser o especialista
-        </li>
-        <li>
-          <span class="bullet-check">✓</span>
-          Aplique ciência da aprendizagem para maximizar retenção e engajamento
-        </li>
-        <li>
-          <span class="bullet-check">✓</span>
-          Conecte seus treinamentos a receita, custo e eficiência operacional
-        </li>
-        <li>
-          <span class="bullet-check">✓</span>
-          Obtenha NPS máximo e ganhe visibilidade estratégica dentro da empresa
-        </li>
+        <li><span class="check">✓</span>Crie treinamentos sobre qualquer tema, mesmo sem ser o especialista</li>
+        <li><span class="check">✓</span>Aplique ciência da aprendizagem para maximizar retenção e engajamento</li>
+        <li><span class="check">✓</span>Conecte treinamentos a receita, custo e eficiência operacional</li>
+        <li><span class="check">✓</span>Obtenha NPS máximo e ganhe visibilidade estratégica na empresa</li>
       </ul>
       <div class="hero-meta">
-        <div class="meta-item">🎓 &nbsp;Gratuito</div>
-        <div class="meta-dot"></div>
-        <div class="meta-item">💻 &nbsp;Online e ao vivo</div>
-        <div class="meta-dot"></div>
-        <div class="meta-item">⏱ &nbsp;Vagas limitadas</div>
+        <span class="meta-pill">Gratuito</span>
+        <span class="meta-pill">Online e ao vivo</span>
+        <span class="meta-pill">Vagas limitadas</span>
       </div>
     </div>
 
     <div class="hero-form-col" id="inscricao">
-    <div class="hero-form-panel">
-      <div class="panel-tag">Inscrição gratuita</div>
-      <h2 class="panel-title serif">Reserve sua vaga<br>agora mesmo</h2>
-      <p class="panel-sub">Preencha em menos de 30 segundos</p>
+      <div class="hero-form-card">
+        <div class="card-tag">Inscrição gratuita</div>
+        <h2 class="card-title">Reserve sua vaga<br><em>agora mesmo</em></h2>
+        <p class="card-sub">Preencha em menos de 30 segundos</p>
 
-      <form id="form-hero" action="https://formspree.io/f/mvznykpv" method="POST">
-        <div class="f-group">
-          <label class="f-label" for="h-nome">Nome completo</label>
-          <input class="f-input" type="text" id="h-nome" name="nome" placeholder="Seu nome" required />
+        <form id="form-hero" action="https://formspree.io/f/mvznykpv" method="POST">
+          <div class="f-group">
+            <label class="f-label" for="h-nome">Nome completo</label>
+            <input class="f-input" type="text" id="h-nome" name="nome" placeholder="Seu nome" required />
+          </div>
+          <div class="f-group">
+            <label class="f-label" for="h-email">E-mail profissional</label>
+            <input class="f-input" type="email" id="h-email" name="email" placeholder="voce@empresa.com" required />
+          </div>
+          <div class="f-group">
+            <label class="f-label" for="h-empresa">Empresa</label>
+            <input class="f-input" type="text" id="h-empresa" name="empresa" placeholder="Nome da empresa" />
+          </div>
+          <div class="f-group">
+            <label class="f-label" for="h-cargo">Cargo</label>
+            <select class="f-select" id="h-cargo" name="cargo">
+              <option value="" disabled selected>Selecione seu cargo</option>
+              <option>Analista de RH / T&D</option>
+              <option>Coordenador(a) de RH / T&D</option>
+              <option>Gerente de RH / T&D</option>
+              <option>Diretor(a) de RH / T&D</option>
+              <option>Outro cargo em RH</option>
+            </select>
+          </div>
+          <button class="f-btn" type="submit" id="btn-hero">Quero minha vaga gratuita →</button>
+          <p class="f-note">🔒 Seus dados estão seguros. Sem spam.</p>
+        </form>
+        <div id="ok-hero" class="f-success" style="display:none">
+          <div class="f-success-icon">✓</div>
+          <p class="f-success-title">Vaga confirmada!</p>
+          <p class="f-success-sub">Fique de olho no seu e-mail — enviaremos todos os detalhes em breve.</p>
         </div>
-        <div class="f-group">
-          <label class="f-label" for="h-email">E-mail profissional</label>
-          <input class="f-input" type="email" id="h-email" name="email" placeholder="voce@empresa.com" required />
-        </div>
-        <div class="f-group">
-          <label class="f-label" for="h-empresa">Empresa</label>
-          <input class="f-input" type="text" id="h-empresa" name="empresa" placeholder="Nome da empresa" />
-        </div>
-        <div class="f-group">
-          <label class="f-label" for="h-cargo">Cargo</label>
-          <select class="f-select" id="h-cargo" name="cargo">
-            <option value="" disabled selected>Selecione seu cargo</option>
-            <option>Analista de RH / T&D</option>
-            <option>Coordenador(a) de RH / T&D</option>
-            <option>Gerente de RH / T&D</option>
-            <option>Diretor(a) de RH / T&D</option>
-            <option>Outro cargo em RH</option>
-          </select>
-        </div>
-        <button class="f-btn" type="submit" id="btn-hero">Quero minha vaga gratuita →</button>
-        <p class="f-note">🔒 &nbsp;Seus dados estão seguros. Sem spam.</p>
-      </form>
-      <div id="ok-hero" class="f-success" style="display:none">
-        <div class="f-success-icon">✓</div>
-        <p class="f-success-title serif">Vaga confirmada!</p>
-        <p class="f-success-sub">Fique de olho no seu e-mail —<br>enviaremos todos os detalhes em breve.</p>
       </div>
-    </div>
     </div>
   </section>
 
   <!-- STRIP -->
   <div class="strip">
     <div class="strip-item">
-      <div class="strip-num serif">20+</div>
+      <div class="strip-num">20+</div>
       <div class="strip-label">anos de docência</div>
     </div>
-    <div class="strip-divider"></div>
+    <div class="strip-sep"></div>
     <div class="strip-item">
-      <div class="strip-num serif">10</div>
-      <div class="strip-label">anos em T&D corporativo</div>
+      <div class="strip-num">10</div>
+      <div class="strip-label">anos em T&amp;D corporativo</div>
     </div>
-    <div class="strip-divider"></div>
+    <div class="strip-sep"></div>
     <div class="strip-item">
-      <div class="strip-num serif">NPS 10</div>
+      <div class="strip-num">NPS 10</div>
       <div class="strip-label">em todos os treinamentos</div>
     </div>
-    <div class="strip-divider"></div>
+    <div class="strip-sep"></div>
     <div class="strip-item">
-      <div class="strip-num serif">USP</div>
+      <div class="strip-num">USP</div>
       <div class="strip-label">formação em licenciatura</div>
     </div>
   </div>
 
   <!-- O QUE VOCÊ VAI APRENDER -->
-  <section class="section">
-    <p class="section-eyebrow">Conteúdo do workshop</p>
-    <h2 class="section-title serif">O que você vai aprender<br>em uma tarde</h2>
+  <section class="section section-creme">
+    <div class="eyebrow">Conteúdo do workshop</div>
+    <h2 class="s-title">O que você vai aprender<br><em>em uma tarde</em></h2>
     <div class="learn-grid">
       <div class="learn-card">
-        <div class="learn-num serif">01</div>
+        <div class="learn-num">01</div>
         <div class="learn-title">Como criar treinamentos sem ser o especialista</div>
-        <div class="learn-body">Método para estruturar qualquer treinamento sobre qualquer tema — com objetivos claros, sequência didática e materiais que funcionam. Sem depender de ser o especialista no assunto.</div>
+        <div class="learn-body">Método para estruturar qualquer treinamento com objetivos claros, sequência didática e materiais que funcionam — sem depender de ser o expert no assunto.</div>
       </div>
       <div class="learn-card">
-        <div class="learn-num serif">02</div>
+        <div class="learn-num">02</div>
         <div class="learn-title">Ciência da aprendizagem na prática</div>
-        <div class="learn-body">As técnicas que professores de alta performance usam para maximizar retenção e engajamento. Aprenda como aplicar espaçamento, recuperação ativa e carga cognitiva em treinamentos corporativos.</div>
+        <div class="learn-body">As técnicas que professores de alta performance usam para maximizar retenção e engajamento. Espaçamento, recuperação ativa e carga cognitiva no contexto corporativo.</div>
       </div>
       <div class="learn-card">
-        <div class="learn-num serif">03</div>
+        <div class="learn-num">03</div>
         <div class="learn-title">Treinamento como alavanca de negócio</div>
-        <div class="learn-body">Como traduzir objetivos de negócio em objetivos de aprendizagem — e como mostrar que seus treinamentos moveram receita, cortaram custo ou aumentaram eficiência operacional.</div>
+        <div class="learn-body">Como traduzir objetivos de negócio em objetivos de aprendizagem e demonstrar que seus treinamentos moveram receita, cortaram custo ou aumentaram eficiência.</div>
       </div>
     </div>
   </section>
 
   <!-- PARA QUEM É -->
-  <section class="section section-cream">
-    <p class="section-eyebrow section-eyebrow-dark">Para quem é</p>
-    <h2 class="section-title serif section-title-dark">Este workshop foi feito<br>para <em>você</em> se…</h2>
+  <section class="section section-warm">
+    <div class="eyebrow">Para quem é</div>
+    <h2 class="s-title">Este workshop foi feito<br>para <em>você</em> se…</h2>
     <div class="forwho-grid">
       <div class="forwho-item">
         <div class="forwho-icon">🎯</div>
         <div>
-          <div class="forwho-text">Você precisa criar treinamentos, mas não é especialista no tema</div>
-          <div class="forwho-sub">Vai sair com um método para qualquer assunto</div>
+          <div class="forwho-title">Precisa criar treinamentos sem ser o especialista no tema</div>
+          <div class="forwho-sub">Vai sair com um método aplicável a qualquer assunto</div>
         </div>
       </div>
       <div class="forwho-item">
         <div class="forwho-icon">📊</div>
         <div>
-          <div class="forwho-text">Seus treinamentos têm baixo engajamento ou retenção</div>
+          <div class="forwho-title">Seus treinamentos têm baixo engajamento ou retenção</div>
           <div class="forwho-sub">Aprenda o que a ciência diz sobre como adultos aprendem</div>
         </div>
       </div>
       <div class="forwho-item">
         <div class="forwho-icon">💡</div>
         <div>
-          <div class="forwho-text">Você não sabe como provar o ROI dos seus treinamentos</div>
+          <div class="forwho-title">Não sabe como provar o ROI dos seus treinamentos</div>
           <div class="forwho-sub">Conecte aprendizagem aos indicadores que a liderança acompanha</div>
         </div>
       </div>
       <div class="forwho-item">
         <div class="forwho-icon">🚀</div>
         <div>
-          <div class="forwho-text">Você quer ganhar visibilidade e ser referência em T&D</div>
-          <div class="forwho-sub">Treinamentos com NPS máximo geram reputação dentro da empresa</div>
+          <div class="forwho-title">Quer ganhar visibilidade e ser referência em T&amp;D</div>
+          <div class="forwho-sub">Treinamentos com NPS máximo constroem reputação estratégica</div>
         </div>
       </div>
     </div>
@@ -778,15 +766,15 @@
   <section class="section section-dark">
     <div class="instructor-wrap">
       <div class="instructor-photo">
-        <div class="instructor-photo-initials">CR</div>
+        <div class="instructor-photo-bg">CR</div>
         <div class="instructor-chip">
           <div class="chip-name">Carolina Rosignoli</div>
           <div class="chip-role">Professora · Líder de T&amp;D</div>
         </div>
       </div>
       <div>
-        <p class="section-eyebrow">Quem vai te ensinar</p>
-        <h2 class="instructor-name serif">Carolina <span>Rosignoli</span></h2>
+        <div class="eyebrow eyebrow-light">Quem vai te ensinar</div>
+        <h2 class="instructor-name">Carolina <em>Rosignoli</em></h2>
         <p class="instructor-role">Professora formada pela USP · Líder de T&amp;D</p>
         <p class="instructor-bio">
           Passou 15 anos em sala de aula antes de entrar no mundo corporativo. Foi coordenadora de escolas, autora de materiais didáticos e formadora de professores da rede pública de ensino.
@@ -796,15 +784,15 @@
         </p>
         <div class="instructor-stats">
           <div class="istat">
-            <div class="istat-num serif">20+</div>
+            <div class="istat-num">20+</div>
             <div class="istat-label">anos de<br>docência</div>
           </div>
           <div class="istat">
-            <div class="istat-num serif">10</div>
+            <div class="istat-num">10</div>
             <div class="istat-label">anos em<br>T&amp;D corp.</div>
           </div>
           <div class="istat">
-            <div class="istat-num serif">NPS 10</div>
+            <div class="istat-num">NPS 10</div>
             <div class="istat-label">em todos os<br>treinamentos</div>
           </div>
         </div>
@@ -813,15 +801,15 @@
   </section>
 
   <!-- BOTTOM FORM -->
-  <section class="section section-mid" id="form-bottom">
-    <div class="bottom-form-wrap">
-      <p class="section-eyebrow" style="text-align:center;">Inscrição gratuita</p>
-      <h2 class="section-title serif" style="text-align:center;">Pronto para transformar<br>seus <em>treinamentos?</em></h2>
-      <p class="section-body section-body-light" style="text-align:center; margin: 0 auto;">
-        Garanta sua vaga gratuitamente. Vagas limitadas para garantir qualidade de entrega.
+  <section class="section section-pale">
+    <div class="bottom-cta">
+      <div class="eyebrow" style="justify-content:center;">Inscrição gratuita</div>
+      <h2 class="s-title" style="text-align:center;">Pronto para transformar<br>seus <em>treinamentos?</em></h2>
+      <p class="s-body s-body-dark" style="text-align:center; margin:0 auto;">
+        Garanta sua vaga gratuitamente. Vagas limitadas para manter a qualidade de entrega.
       </p>
       <div class="bottom-form-card">
-        <form id="form-bottom-el" action="https://formspree.io/f/mvznykpv" method="POST">
+        <form id="form-bottom" action="https://formspree.io/f/mvznykpv" method="POST">
           <div class="f-group">
             <label class="f-label" for="b-nome">Nome completo</label>
             <input class="f-input" type="text" id="b-nome" name="nome" placeholder="Seu nome" required />
@@ -846,12 +834,12 @@
             </select>
           </div>
           <button class="f-btn" type="submit" id="btn-bottom">Quero minha vaga gratuita →</button>
-          <p class="f-note">🔒 &nbsp;Seus dados estão seguros. Sem spam, prometemos.</p>
+          <p class="f-note">🔒 Seus dados estão seguros. Sem spam, prometemos.</p>
         </form>
         <div id="ok-bottom" class="f-success" style="display:none">
           <div class="f-success-icon">✓</div>
-          <p class="f-success-title serif">Vaga confirmada!</p>
-          <p class="f-success-sub">Fique de olho no seu e-mail —<br>enviaremos todos os detalhes em breve.</p>
+          <p class="f-success-title">Vaga confirmada!</p>
+          <p class="f-success-sub">Fique de olho no seu e-mail — enviaremos todos os detalhes em breve.</p>
         </div>
       </div>
     </div>
@@ -886,8 +874,8 @@
         }
       });
     }
-    setupForm('form-hero',      'btn-hero',   'ok-hero');
-    setupForm('form-bottom-el', 'btn-bottom', 'ok-bottom');
+    setupForm('form-hero',   'btn-hero',   'ok-hero');
+    setupForm('form-bottom', 'btn-bottom', 'ok-bottom');
   </script>
 </body>
 </html>
