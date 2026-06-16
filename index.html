@@ -594,6 +594,29 @@
       box-shadow: 0 4px 24px rgba(36,31,46,0.07);
     }
 
+    /* ─── CHECKBOX LGPD ─── */
+    .f-check-group {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin-top: 14px;
+      margin-bottom: 4px;
+    }
+    .f-check-group input[type="checkbox"] {
+      width: 16px;
+      min-width: 16px;
+      height: 16px;
+      margin-top: 2px;
+      accent-color: var(--rosa);
+      cursor: pointer;
+    }
+    .f-check-label {
+      font-size: 12px;
+      color: var(--text-muted);
+      line-height: 1.5;
+      cursor: pointer;
+    }
+
     /* ─── FOOTER ─── */
     footer {
       background: var(--grafite-2);
@@ -700,6 +723,14 @@
               <option>Diretor(a) de RH / T&D</option>
               <option>Outro cargo em RH</option>
             </select>
+          </div>
+          <div class="f-group">
+            <label class="f-label" for="h-telefone">WhatsApp</label>
+            <input class="f-input" type="tel" id="h-telefone" name="telefone" placeholder="(11) 99999-9999" />
+          </div>
+          <div class="f-check-group">
+            <input type="checkbox" id="h-aceite" name="aceite_whatsapp" value="sim" required />
+            <label class="f-check-label" for="h-aceite">Aceito receber novidades sobre este evento pelo WhatsApp. Apenas este evento, sem outras comunicações.</label>
           </div>
           <button class="f-btn" type="submit" id="btn-hero">Quero minha vaga gratuita →</button>
           <p class="f-note">Seus dados estão seguros. Sem spam, prometemos.</p>
@@ -835,6 +866,14 @@
               <option>Outro cargo em RH</option>
             </select>
           </div>
+          <div class="f-group">
+            <label class="f-label" for="b-telefone">WhatsApp</label>
+            <input class="f-input" type="tel" id="b-telefone" name="telefone" placeholder="(11) 99999-9999" />
+          </div>
+          <div class="f-check-group">
+            <input type="checkbox" id="b-aceite" name="aceite_whatsapp" value="sim" required />
+            <label class="f-check-label" for="b-aceite">Aceito receber novidades sobre este evento pelo WhatsApp. Apenas este evento, sem outras comunicações.</label>
+          </div>
           <button class="f-btn" type="submit" id="btn-bottom">Quero minha vaga gratuita →</button>
           <p class="f-note">🔒 Seus dados estão seguros. Sem spam, prometemos.</p>
         </form>
@@ -871,10 +910,12 @@
 
         const data = new FormData(form);
         const payload = {
-          nome:    data.get('nome')    || null,
-          email:   data.get('email')   || null,
-          empresa: data.get('empresa') || null,
-          cargo:   data.get('cargo')   || null,
+          nome:             data.get('nome')            || null,
+          email:            data.get('email')           || null,
+          empresa:          data.get('empresa')         || null,
+          cargo:            data.get('cargo')           || null,
+          telefone:         data.get('telefone')        || null,
+          aceite_whatsapp:  data.get('aceite_whatsapp') === 'sim',
         };
 
         const res = await fetch(SUPA_URL, {
