@@ -662,21 +662,43 @@
       .instructor-photo { max-width: 280px; }
     }
     @media (max-width: 768px) {
-      .nav-inner { padding: 0 24px; }
-      .hero-inner { padding: 0 24px; }
-      .hero-content { padding: 48px 0 32px; }
-      .hero-headline { font-size: 36px; }
-      .hero-form-col { padding: 0 0 56px; }
+      .nav-inner { padding: 0 20px; }
+      .nav-brand { font-size: 17px; }
+      .nav-cta { padding: 8px 16px; font-size: 12px; }
+      .hero-inner { padding: 0 20px; }
+      .hero-content { padding: 40px 0 28px; }
+      .hero-headline { font-size: 34px; }
+      .hero-sub { font-size: 15px; }
+      .hero-form-col { padding: 0 0 48px; }
       .hero-form-card { max-width: 100%; }
-      .strip { padding: 32px 24px; }
+      .strip { padding: 28px 20px; flex-wrap: wrap; }
+      .strip .wrap { gap: 16px !important; }
       .strip-sep { display: none; }
-      .section { padding: 64px 24px; }
+      .section { padding: 56px 20px; }
+      .s-title { font-size: 36px; }
       .learn-grid { grid-template-columns: 1fr; gap: 12px; }
       .forwho-grid { grid-template-columns: 1fr; }
-      .instructor-photo { max-width: 240px; }
-      .bottom-form-card { padding: 32px 24px; }
-      footer { padding: 24px; }
-      footer .wrap { justify-content: center; text-align: center; }
+      .instructor-wrap { gap: 28px; }
+      .instructor-photo { max-width: 220px; }
+      .instructor-name { font-size: 34px; }
+      .bottom-form-card { padding: 28px 20px; }
+      footer { padding: 20px; }
+      footer .wrap { justify-content: center; text-align: center; flex-direction: column; gap: 12px; }
+    }
+    @media (max-width: 480px) {
+      .nav-brand { font-size: 15px; }
+      .nav-cta { padding: 7px 12px; font-size: 11px; letter-spacing: 0.3px; }
+      .hero-headline { font-size: 28px; letter-spacing: -0.5px; }
+      .hero-sub { font-size: 14px; }
+      .hero-eyebrow { font-size: 10px; letter-spacing: 1.5px; }
+      .s-title { font-size: 30px; }
+      .strip-num { font-size: 24px; }
+      .strip-logo { height: 20px; max-width: 64px; }
+      .strip-label { font-size: 10px; }
+      .card-title { font-size: 22px; }
+      .instructor-name { font-size: 28px; }
+      .learn-card { padding: 24px 20px; }
+      .section { padding: 48px 16px; }
     }
   </style>
 </head>
