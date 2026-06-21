@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Para empresas — Palestras, trilhas e imersões | Carol Rosignoli</title>
+  <meta name="description" content="Palestras, trilhas e imersões para o seu time, com cases documentados e abordagem prática. Conte o que sua empresa precisa." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,700;0,9..144,900;1,9..144,300;1,9..144,400;1,9..144,700;1,9..144,900&family=Hanken+Grotesque:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --creme:#F5EEDE; --creme-pale:#FAF5E8; --grafite:#241F2E; --grafite-2:#2D2840;
+      --lavanda:#5E547A; --rosa:#A76D8C; --rosa-2:#C195AB; --rosa-deep:#845572;
+      --azul:#1F3A4D; --linha:#D9CDB0; --card:#FFFCF4;
+      --text-body:#3A4254; --text-muted:#6B6E7E; --text-faint:#9A93A0;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family:'Hanken Grotesque',system-ui,sans-serif; background:var(--creme); color:var(--text-body); line-height:1.6; -webkit-font-smoothing:antialiased; }
+
+    nav { background:var(--creme); border-bottom:1px solid var(--linha); height:64px; position:sticky; top:0; z-index:100; }
+    .nav-inner { max-width:1200px; margin:0 auto; padding:0 64px; height:100%; display:flex; align-items:center; justify-content:space-between; }
+    .nav-brand { font-family:'Fraunces',Georgia,serif; font-size:20px; font-weight:700; color:var(--grafite); letter-spacing:-0.3px; text-decoration:none; }
+    .nav-brand em { font-style:italic; color:var(--rosa); }
+    .nav-dot { display:inline-block; width:7px; height:7px; border-radius:50%; background:var(--rosa); margin-left:10px; vertical-align:middle; position:relative; top:-1px; box-shadow:0 0 8px 3px rgba(167,109,140,0.45),0 0 18px 6px rgba(167,109,140,0.2); }
+    .nav-back { font-size:14px; font-weight:600; color:var(--grafite); text-decoration:none; display:inline-flex; align-items:center; gap:6px; }
+    .nav-back:hover { color:var(--rosa); }
+
+    .page { max-width:1200px; margin:0 auto; padding:80px 64px; display:grid; grid-template-columns:1fr 440px; gap:64px; align-items:start; }
+
+    .eyebrow { display:inline-flex; align-items:center; gap:10px; font-size:11px; font-weight:600; letter-spacing:2.5px; text-transform:uppercase; color:var(--rosa-deep); margin-bottom:18px; }
+    .eyebrow::before { content:''; width:8px; height:8px; border-radius:50%; background:var(--rosa); box-shadow:0 0 12px #C77FA3,0 0 24px rgba(167,109,140,0.45); }
+    .p-title { font-family:'Fraunces',Georgia,serif; font-size:46px; font-weight:900; line-height:1.08; letter-spacing:-0.5px; color:var(--azul); margin-bottom:20px; }
+    .p-title em { font-style:italic; color:var(--rosa); }
+    .p-lead { font-size:17px; color:var(--text-muted); line-height:1.7; max-width:52ch; margin-bottom:28px; }
+    .p-topics { list-style:none; display:grid; grid-template-columns:1fr 1fr; gap:10px 24px; max-width:560px; }
+    .p-topics li { position:relative; padding-left:20px; font-size:14px; color:var(--text-body); line-height:1.45; }
+    .p-topics li::before { content:''; position:absolute; left:0; top:8px; width:7px; height:7px; border-radius:50%; background:var(--rosa-2); }
+
+    .form-card { background:var(--card); border:1px solid var(--linha); border-radius:16px; padding:40px 36px; box-shadow:0 8px 32px rgba(36,31,46,0.10),0 2px 8px rgba(36,31,46,0.06); }
+    .card-tag { display:inline-block; background:rgba(167,109,140,0.1); color:var(--rosa-deep); font-size:10px; font-weight:600; letter-spacing:2px; text-transform:uppercase; padding:5px 12px; border-radius:3px; margin-bottom:16px; }
+    .card-title { font-family:'Fraunces',Georgia,serif; font-size:24px; font-weight:700; color:var(--grafite); line-height:1.2; margin-bottom:6px; }
+    .card-title em { font-style:italic; color:var(--rosa); }
+    .card-sub { font-size:13px; color:var(--text-faint); margin-bottom:24px; }
+
+    .f-group { margin-bottom:14px; }
+    .f-label { display:block; font-size:11px; font-weight:600; letter-spacing:1px; text-transform:uppercase; color:var(--text-faint); margin-bottom:6px; }
+    .f-input, .f-select { width:100%; background:var(--creme-pale); border:1px solid var(--linha); border-radius:6px; padding:11px 14px; font-family:'Hanken Grotesque',sans-serif; font-size:14px; color:var(--grafite); outline:none; transition:border-color 0.15s,background 0.15s; appearance:none; }
+    .f-input::placeholder { color:var(--text-faint); }
+    .f-input:focus, .f-select:focus { border-color:var(--rosa); background:#fff; }
+    .f-select { background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11' height='7' viewBox='0 0 11 7'%3E%3Cpath d='M1 1l4.5 4.5L10 1' stroke='%239A93A0' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"); background-repeat:no-repeat; background-position:right 14px center; padding-right:36px; cursor:pointer; }
+    .f-btn { width:100%; background:var(--rosa); color:#fff; border:none; border-radius:6px; padding:15px; font-family:'Hanken Grotesque',sans-serif; font-size:14px; font-weight:600; cursor:pointer; margin-top:8px; transition:background 0.15s; }
+    .f-btn:hover { background:var(--rosa-deep); }
+    .f-btn:disabled { opacity:0.6; cursor:default; }
+    .f-note { font-size:11px; color:var(--text-faint); text-align:center; margin-top:12px; }
+    .f-check-group { display:flex; align-items:flex-start; gap:10px; margin-top:14px; margin-bottom:4px; }
+    .f-check-group input[type="checkbox"] { width:16px; min-width:16px; height:16px; margin-top:2px; accent-color:var(--rosa); cursor:pointer; }
+    .f-check-label { font-size:12px; color:var(--text-muted); line-height:1.5; cursor:pointer; }
+    .f-success { text-align:center; padding:32px 0; }
+    .f-success-icon { width:52px; height:52px; border-radius:50%; background:rgba(167,109,140,0.12); color:var(--rosa); font-size:20px; display:flex; align-items:center; justify-content:center; margin:0 auto 18px; }
+    .f-success-title { font-family:'Fraunces',Georgia,serif; font-size:24px; font-weight:700; color:var(--grafite); margin-bottom:8px; }
+    .f-success-sub { font-size:14px; color:var(--text-muted); line-height:1.6; }
+
+    footer { background:var(--grafite-2); border-top:1px solid rgba(255,255,255,0.06); padding:32px 64px; font-size:13px; color:#938AAB; text-align:center; }
+
+    @media (max-width:900px) {
+      .nav-inner { padding:0 24px; }
+      .page { grid-template-columns:1fr; padding:48px 24px; gap:40px; }
+      .p-title { font-size:36px; }
+      .p-topics { grid-template-columns:1fr 1fr; }
+    }
+    @media (max-width:560px) {
+      .p-topics { grid-template-columns:1fr; }
+      .form-card { padding:28px 22px; }
+      .p-title { font-size:30px; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nav-inner">
+      <a href="/" class="nav-brand">Carol <em>Rosignoli</em><span class="nav-dot"></span></a>
+      <a href="/" class="nav-back">← Início</a>
+    </div>
+  </nav>
+
+  <main class="page">
+    <div>
+      <div class="eyebrow">Para empresas</div>
+      <h1 class="p-title">Palestras, trilhas e imersões<br><em>para o seu time</em></h1>
+      <p class="p-lead">
+        Levo método de sala de aula e resultado de negócio para dentro da sua empresa. Temas que eu trabalho:
+      </p>
+      <ul class="p-topics">
+        <li>Segurança psicológica e prevenção de riscos psicossociais</li>
+        <li>Transformação cultural e inteligência artificial</li>
+        <li>Comunicação estratégica e mediação de conflitos</li>
+        <li>Feedback e empatia assertiva</li>
+        <li>Mentalidade de crescimento e garra</li>
+        <li>Aprendizagem ao longo da vida</li>
+        <li>Autoridade e conflito</li>
+        <li>Relações intergeracionais</li>
+      </ul>
+      <p class="p-lead" style="margin-top:24px;">
+        Todas com cases documentados de sucesso, abordagem prática e customizadas para você.
+      </p>
+    </div>
+
+    <div class="form-card">
+      <div class="card-tag">Solicitar proposta</div>
+      <h2 class="card-title">Conte o que sua<br><em>empresa precisa</em></h2>
+      <p class="card-sub">Respondo pessoalmente para montarmos algo sob medida.</p>
+
+      <form id="lead-form">
+        <div class="f-group">
+          <label class="f-label" for="nome">Nome completo</label>
+          <input class="f-input" type="text" id="nome" name="nome" placeholder="Seu nome" required />
+        </div>
+        <div class="f-group">
+          <label class="f-label" for="email">E-mail profissional</label>
+          <input class="f-input" type="email" id="email" name="email" placeholder="voce@empresa.com" required />
+        </div>
+        <div class="f-group">
+          <label class="f-label" for="empresa">Empresa</label>
+          <input class="f-input" type="text" id="empresa" name="empresa" placeholder="Nome da empresa" required />
+        </div>
+        <div class="f-group">
+          <label class="f-label" for="cargo">Cargo</label>
+          <select class="f-select" id="cargo" name="cargo">
+            <option value="" disabled selected>Selecione seu cargo</option>
+            <option>Analista / Especialista</option>
+            <option>Coordenador(a)</option>
+            <option>Gerente</option>
+            <option>Diretor(a) / C-level</option>
+            <option>Outro</option>
+          </select>
+        </div>
+        <div class="f-group">
+          <label class="f-label" for="telefone">WhatsApp</label>
+          <input class="f-input" type="tel" id="telefone" name="telefone" placeholder="(11) 99999-9999" />
+        </div>
+        <div class="f-check-group">
+          <input type="checkbox" id="aceite" name="aceite" value="sim" required />
+          <label class="f-check-label" for="aceite">Aceito ser contatada(o) pela Carol sobre esta solicitação.</label>
+        </div>
+        <button class="f-btn" type="submit" id="btn">Quero uma proposta →</button>
+        <p class="f-note">Seus dados estão seguros. Sem spam, prometemos.</p>
+      </form>
+      <div id="ok" class="f-success" style="display:none">
+        <div class="f-success-icon">✓</div>
+        <p class="f-success-title">Recebido!</p>
+        <p class="f-success-sub">Obrigada pelo interesse — em breve eu entro em contato para conversarmos.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer>© 2026 Carol Rosignoli · RH Professor</footer>
+
+  <script>
+    const SUPA_URL = 'https://ourncyxuudixmzamheaj.supabase.co/rest/v1/leads';
+    const SUPA_KEY = 'sb_publishable_sUO9v5LbhojT-06YlPWIAQ_R9Lb1qxn';
+    const PRODUTO = 'Empresas';
+
+    function post(body) {
+      return fetch(SUPA_URL, {
+        method: 'POST',
+        headers: { 'apikey': SUPA_KEY, 'Authorization': 'Bearer ' + SUPA_KEY, 'Content-Type': 'application/json', 'Prefer': 'return=minimal' },
+        body: JSON.stringify(body),
+      });
+    }
+
+    const form = document.getElementById('lead-form');
+    const btn = document.getElementById('btn');
+    const ok = document.getElementById('ok');
+
+    form.addEventListener('submit', async function (e) {
+      e.preventDefault();
+      btn.textContent = 'Enviando...';
+      btn.disabled = true;
+
+      const data = new FormData(form);
+      const payload = {
+        nome: data.get('nome') || null,
+        email: data.get('email') || null,
+        empresa: data.get('empresa') || null,
+        cargo: data.get('cargo') || null,
+        telefone: data.get('telefone') || null,
+        aceite_whatsapp: data.get('aceite') === 'sim',
+        produto: PRODUTO,
+      };
+
+      let res = await post(payload);
+      if (!res.ok) {
+        // Fallback: 'produto' column may not exist yet — resend without it so the lead is never lost.
+        const { produto, ...rest } = payload;
+        res = await post(rest);
+      }
+
+      if (res.ok) {
+        form.style.display = 'none';
+        ok.style.display = 'block';
+      } else {
+        btn.textContent = 'Erro. Tente novamente.';
+        btn.disabled = false;
+      }
+    });
+  </script>
+</body>
+</html>
