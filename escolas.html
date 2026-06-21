@@ -65,7 +65,9 @@
     .topics li::before { content:''; position:absolute; left:0; top:9px; width:7px; height:7px; border-radius:50%; background:var(--rosa-2); }
 
     /* LOGOS (onde já dei formação) */
-    .logos-row { display:flex; flex-wrap:wrap; gap:12px 14px; margin-top:28px; }
+    .logos-row { display:flex; flex-wrap:wrap; gap:20px 24px; margin-top:28px; align-items:center; }
+    .logo-img { height:48px; max-width:200px; object-fit:contain; opacity:0.85; transition:opacity .2s; }
+    .logo-img:hover { opacity:1; }
     .logo-chip { border:1px solid var(--linha); border-radius:999px; padding:9px 18px; font-size:13px; font-weight:600; color:var(--lavanda); background:var(--card); white-space:nowrap; }
 
     /* DEPOIMENTOS */
@@ -172,16 +174,16 @@
     <div class="wrap">
       <div class="eyebrow">Já dei formação em</div>
       <div class="logos-row">
-        <span class="logo-chip">Secretaria de São Paulo</span>
-        <span class="logo-chip">Secretaria do Paraná</span>
+        <img class="logo-img" src="imagem/logos_escola/logo-gov.png" alt="Secretaria de São Paulo" />
+        <img class="logo-img" src="imagem/logos_escola/logo_parana.png" alt="Secretaria do Paraná" />
         <span class="logo-chip">EFAPE São Paulo</span>
-        <span class="logo-chip">Tom Educação</span>
-        <span class="logo-chip">Instituto Sidarta</span>
-        <span class="logo-chip">Instituto Cacau Show</span>
-        <span class="logo-chip">Parceiros da Educação</span>
-        <span class="logo-chip">Somos Educação</span>
-        <span class="logo-chip">Colégio PH</span>
-        <span class="logo-chip">Escola Tarsila do Amaral</span>
+        <img class="logo-img" src="imagem/logos_escola/logo_tom.png" alt="Tom Educação" />
+        <img class="logo-img" src="imagem/logos_escola/logo_sidarta.webp" alt="Instituto Sidarta" />
+        <img class="logo-img" src="imagem/logos_escola/logo_cacaushow.png" alt="Instituto Cacau Show" />
+        <img class="logo-img" src="imagem/logos_escola/logo_parceiros.png" alt="Parceiros da Educação" />
+        <img class="logo-img" src="imagem/logos_escola/logo_somos.png" alt="Somos Educação" />
+        <img class="logo-img" src="imagem/logos_escola/logo_ph.webp" alt="Colégio PH" />
+        <img class="logo-img" src="imagem/logos_escola/logo_tarsila.png" alt="Escola Tarsila do Amaral" />
       </div>
     </div>
   </section>
