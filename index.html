@@ -531,6 +531,53 @@
     }
     .work-link:hover { color: var(--rosa-deep); }
 
+    /* ─── HERO TITLE (conversão) ─── */
+    .hero-title {
+      font-family: 'Fraunces', Georgia, serif;
+      font-weight: 900;
+      font-size: clamp(2.1rem, 3.6vw, 3.1rem);
+      line-height: 1.08;
+      letter-spacing: -0.5px;
+      color: var(--azul);
+      margin: 0;
+    }
+    .hero-sub { font-size: 18px; line-height: 1.6; color: var(--text-body); max-width: 52ch; margin: 0; }
+    .hero-sub .em { color: var(--azul); font-weight: 600; }
+    .hero-head { display: flex; flex-direction: column; gap: 8px; }
+    .hero-attrib { font-family: 'Hanken Grotesque', sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 0.5px; text-transform: none; color: var(--text-faint); }
+
+    /* ─── RECOGNIZE (agitação) ─── */
+    .recognize-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 48px; }
+    .recognize-item {
+      background: var(--card); border: 1px solid var(--linha); border-radius: 12px;
+      padding: 26px 28px 26px 58px; font-size: 16px; line-height: 1.5; color: var(--text-body);
+      position: relative;
+    }
+    .recognize-item::before {
+      content: '\201C'; position: absolute; left: 22px; top: 22px;
+      font-family: 'Fraunces', Georgia, serif; font-size: 46px; font-weight: 900;
+      color: var(--rosa); opacity: 0.38; line-height: 1;
+    }
+    .recognize-close {
+      margin-top: 36px; font-family: 'Fraunces', Georgia, serif; font-weight: 700;
+      font-size: clamp(1.3rem, 2vw, 1.75rem); line-height: 1.35; color: var(--grafite); max-width: 32ch;
+    }
+    .recognize-close em { font-style: italic; color: var(--rosa); }
+
+    /* ─── BELIEF (citação / campo de tinta) ─── */
+    .belief { background: var(--grafite); }
+    .belief .wrap { text-align: center; }
+    .belief-lead { font-size: 17px; line-height: 1.75; color: var(--text-dark-muted); max-width: 60ch; margin: 0 auto 40px; }
+    .belief-mark { font-family: 'Fraunces', Georgia, serif; font-size: 58px; font-weight: 900; color: var(--rosa-2); opacity: 0.5; line-height: 0.5; }
+    .belief-quote {
+      font-family: 'Fraunces', Georgia, serif; font-style: italic; font-weight: 700;
+      font-size: clamp(1.7rem, 3vw, 2.5rem); line-height: 1.3; letter-spacing: -0.5px;
+      color: var(--creme-pale); max-width: 760px; margin: 18px auto 28px;
+    }
+    .belief-quote .hl { color: var(--rosa-2); }
+    .belief-attr { display: inline-flex; align-items: center; gap: 0.6em; justify-content: center; font-size: 14px; font-weight: 600; color: var(--text-dark-muted); }
+    .belief-attr .hero-sprig { color: var(--lavanda-3); }
+
     /* ─── WORKSHOP HIGHLIGHT ─── */
     .highlight-card {
       background: var(--card);
@@ -668,6 +715,7 @@
       .work-card { padding: 30px 26px; }
       .work-num { font-size: 46px; }
       .work-link { margin-top: 16px; }
+      .recognize-grid { grid-template-columns: 1fr; }
       .about-name { font-size: 34px; }
       .about-carousel { max-width: 260px; }
       .highlight-card, .news-card { padding: 32px 24px; }
@@ -712,56 +760,30 @@
 
     <div class="hero-inner">
       <div class="hero-text">
-        <span class="hero-kicker">RH professor · Aprendizagem ao longo da vida</span>
+        <span class="hero-kicker">RH professor</span>
 
-        <div class="hero-manifesto" role="blockquote">
-          Educação não transforma o mundo.<br>
-          Educação muda as pessoas.<br>
-          <span class="glow-word">Pessoas transformam o mundo.</span>
+        <div class="hero-head">
+          <h1 class="hero-title">
+            A sala de aula é o espaço<br>
+            mais radical de <span class="glow-word">possibilidade.</span>
+          </h1>
+          <span class="hero-attrib">bell hooks</span>
         </div>
-
-        <span class="hero-attr">
-          <span class="hero-sprig" aria-hidden="true">
-            <svg viewBox="0 0 240 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M6 51 Q 78 45 150 41 Q 80 50 6 51 Z" fill="currentColor"/>
-              <path d="M150 41 L 233 12" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
-              <g fill="currentColor">
-                <ellipse cx="160" cy="33" rx="12"  ry="3.3" transform="rotate(-31 160 33)"/>
-                <ellipse cx="178" cy="28" rx="10.5" ry="3.2" transform="rotate(-31 178 28)"/>
-                <ellipse cx="195" cy="23" rx="9"   ry="3.1" transform="rotate(-31 195 23)"/>
-                <ellipse cx="211" cy="18" rx="7.5" ry="3.0" transform="rotate(-31 211 18)"/>
-                <ellipse cx="225" cy="14" rx="6"   ry="2.8" transform="rotate(-31 225 14)"/>
-                <ellipse cx="161" cy="46" rx="11"  ry="3.2" transform="rotate(31 161 46)"/>
-                <ellipse cx="179" cy="41" rx="9.5" ry="3.1" transform="rotate(31 179 41)"/>
-                <ellipse cx="196" cy="36" rx="8"   ry="3.0" transform="rotate(31 196 36)"/>
-                <ellipse cx="212" cy="31" rx="6.5" ry="2.8" transform="rotate(31 212 31)"/>
-                <ellipse cx="236" cy="9"  rx="5.5" ry="2.6" transform="rotate(-22 236 9)"/>
-                <ellipse cx="236" cy="18" rx="5"   ry="2.6" transform="rotate(26 236 18)"/>
-              </g>
-            </svg>
-          </span>
-          Paulo Freire
-        </span>
 
         <hr class="hero-rule" />
 
         <div class="hero-leads">
-          <p class="hero-lead">
-            Trago o entusiasmo do seu time de volta em 7 dias. Brincadeira rs.
+          <p class="hero-sub">
+            Mas só se você tiver as manhas de engajamento e retenção de verdade. Aprenda com quem passou quinze anos em sala de aula e estudou a fundo como o cérebro humano aprende. Comigo você aprende a <span class="em">conduzir uma turma, prender a atenção e fazer a aprendizagem sair da boca de quem aprende.</span>
           </p>
-          <p class="hero-lead">
-            O que eu faço é compartilhar as <span class="em">manhas de quem passou 15 anos em sala de aula</span> e estudou profundamente como o cérebro humano aprende para dentro das empresas.
-          </p>
-          <p class="hero-lead">
-            Transformo relações e profissionais pela aprendizagem ao longo da vida, pela comunicação estratégica, pela reconstrução das dinâmicas de autoridade, e pelas conexões verdadeiras dentro dos times.
-          </p>
-          <p class="hero-lead">
-            Faço isso com bom humor, coragem, evidências científicas e um repertório longo de quem dá aula desde os 17 anos de idade. E é nerd de carteirinha.
+          <p class="hero-sub">
+            Com bom humor, ousadia e ciência de peso. (E nem uma vírgula escrita por IA.)
           </p>
         </div>
 
         <div class="hero-cta">
-          <a href="workshop.html" class="btn btn-primary">Próximo workshop gratuito</a>
+          <a href="workshop.html" class="btn btn-primary">Comece pelo workshop gratuito</a>
+          <a href="#newsletter" class="btn btn-ghost">Receba a newsletter</a>
         </div>
       </div>
 
@@ -786,65 +808,74 @@
         <div class="strip-label">anos em T&amp;D e Design Instrucional</div>
       </div>
       <div class="strip-sep"></div>
+      <div class="strip-sep"></div>
       <div class="strip-item">
         <img class="strip-logo" src="imagem/usp.png" alt="USP" />
+        <div class="strip-label">bacharelado, licenciatura e mestrado</div>
       </div>
+      <div class="strip-sep"></div>
       <div class="strip-item">
         <img class="strip-logo" src="imagem/stanford.png" alt="Stanford" />
+        <div class="strip-label">especialista em formação de adultos</div>
       </div>
+      <div class="strip-sep"></div>
       <div class="strip-item">
         <img class="strip-logo" src="imagem/fgv.png" alt="FGV" />
+        <div class="strip-label">MBA em Gestão Empresarial</div>
       </div>
     </div>
   </div>
 
-  <!-- SOBRE -->
-  <section class="section section-dark" id="sobre">
+  <!-- RECONHECE (agitação) -->
+  <section class="section section-creme">
     <div class="wrap">
-      <div class="about-wrap">
-        <div class="about-carousel" id="aboutCarousel">
-          <div class="carousel-slide is-active"><img src="imagem/carol.png" alt="Carol Rosignoli" /></div>
-          <div class="carousel-slide"><img src="imagem/foto_aula02.jpg" alt="Carol em sala de aula" /></div>
-          <div class="carousel-slide"><img src="imagem/foto_work01.jpg" alt="Carol no trabalho" /></div>
-          <div class="carousel-slide"><img src="imagem/foto_work02.jpg" alt="Carol no trabalho" /></div>
-          <button class="carousel-arrow carousel-prev" type="button" aria-label="Foto anterior">‹</button>
-          <button class="carousel-arrow carousel-next" type="button" aria-label="Próxima foto">›</button>
-          <div class="carousel-dots">
-            <button class="carousel-dot is-active" type="button" aria-label="Foto 1"></button>
-            <button class="carousel-dot" type="button" aria-label="Foto 2"></button>
-            <button class="carousel-dot" type="button" aria-label="Foto 3"></button>
-            <button class="carousel-dot" type="button" aria-label="Foto 4"></button>
-          </div>
-        </div>
-        <div>
-          <div class="eyebrow eyebrow-light">Quem é a Carol</div>
-          <h2 class="about-name">Carol <em>Rosignoli</em><span class="glow-dot"></span></h2>
-          <p class="about-role">Professora formada na USP e em Stanford · Head de Learning e D&amp;I</p>
-          <p class="about-bio">
-            Mãe da Elisa e Head de Learning e D&amp;I na Alice. Mestra em Filologia e Língua Portuguesa pela USP, com MBA em Gestão Empresarial pela FGV e licenciatura em Pedagogia. Atuou como gestora escolar, coordenadora pedagógica, editora e gerente editorial de materiais para a educação básica, com duas obras aprovadas no PNLD 2021.
-          </p>
-          <p class="about-bio">
-            É consultora em desenvolvimento de currículos e trilhas formativas no contexto corporativo, designer instrucional e pesquisadora sobre o ensino de ciências no Brasil — com recorte de gênero e raça — em parceria da Fundação Carlos Chagas com o British Council. Passou pela Universidade de Stanford em imersão de formação de professores e pela Faculdade de Letras da Universidade de Lisboa em intercâmbio de mérito acadêmico.
-          </p>
-          <p class="about-bio">
-            Carol adora dar aula. Sério mesmo. Faria até de graça. Aliás, faz. 😉
-          </p>
-          <div class="about-stats">
-            <div class="istat">
-              <div class="istat-num">15+</div>
-              <div class="istat-label">anos em sala de aula</div>
-            </div>
-            <div class="istat">
-              <div class="istat-num">10</div>
-              <div class="istat-label">anos em T&amp;D corporativo</div>
-            </div>
-            <div class="istat">
-              <div class="istat-num">2</div>
-              <div class="istat-label">obras aprovadas no PNLD</div>
-            </div>
-          </div>
-        </div>
+      <div class="eyebrow">Entre nós</div>
+      <h2 class="s-title">Você reconhece<br><em>isso?</em></h2>
+      <div class="recognize-grid">
+        <div class="recognize-item">Fiz um treinamento parrudo cheio de conteúdo, todo mundo consumiu, mas no dia seguinte ninguém lembra de nada.</div>
+        <div class="recognize-item">Meus treinamentos são NPS 100, mas não tenho indicadores na ponta pra saber se a performance está melhorando.</div>
+        <div class="recognize-item">Não consigo segurar a atenção da turma: é multitask o tempo todo, o celular e o cansaço dominam.</div>
+        <div class="recognize-item">Quando aplico dinâmicas e atividades, sempre os mesmos poucos participam e os demais ficam com aquela cara de “lá vem o RH…”</div>
       </div>
+      <p class="recognize-close">
+        A diferença entre quem aplica treinamento e quem tem a sala na mão tem nome: <em>método</em>. E ele se aprende.
+      </p>
+    </div>
+  </section>
+
+  <!-- A VIRADA (crença) -->
+  <section class="section belief">
+    <div class="wrap">
+      <div class="eyebrow eyebrow-light" style="justify-content:center;">No que eu acredito</div>
+      <p class="belief-lead">
+        Aluno é tudo igual: com a metodologia certa, qualquer turma engaja. E aluno é tudo diferente: a melhor aula parte do que as pessoas já sabem. Quando você domina as duas coisas, para de torcer pela boa vontade da plateia e passa a conduzir.
+      </p>
+      <div class="belief-mark">“</div>
+      <blockquote class="belief-quote">
+        Ensinar não é transferir conhecimento, mas <span class="hl">criar as possibilidades para a sua produção.</span>
+      </blockquote>
+      <span class="belief-attr">
+        <span class="hero-sprig" aria-hidden="true">
+          <svg viewBox="0 0 240 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6 51 Q 78 45 150 41 Q 80 50 6 51 Z" fill="currentColor"/>
+            <path d="M150 41 L 233 12" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+            <g fill="currentColor">
+              <ellipse cx="160" cy="33" rx="12"  ry="3.3" transform="rotate(-31 160 33)"/>
+              <ellipse cx="178" cy="28" rx="10.5" ry="3.2" transform="rotate(-31 178 28)"/>
+              <ellipse cx="195" cy="23" rx="9"   ry="3.1" transform="rotate(-31 195 23)"/>
+              <ellipse cx="211" cy="18" rx="7.5" ry="3.0" transform="rotate(-31 211 18)"/>
+              <ellipse cx="225" cy="14" rx="6"   ry="2.8" transform="rotate(-31 225 14)"/>
+              <ellipse cx="161" cy="46" rx="11"  ry="3.2" transform="rotate(31 161 46)"/>
+              <ellipse cx="179" cy="41" rx="9.5" ry="3.1" transform="rotate(31 179 41)"/>
+              <ellipse cx="196" cy="36" rx="8"   ry="3.0" transform="rotate(31 196 36)"/>
+              <ellipse cx="212" cy="31" rx="6.5" ry="2.8" transform="rotate(31 212 31)"/>
+              <ellipse cx="236" cy="9"  rx="5.5" ry="2.6" transform="rotate(-22 236 9)"/>
+              <ellipse cx="236" cy="18" rx="5"   ry="2.6" transform="rotate(26 236 18)"/>
+            </g>
+          </svg>
+        </span>
+        Paulo Freire · Pedagogia da Autonomia
+      </span>
     </div>
   </section>
 
@@ -854,7 +885,7 @@
       <div class="eyebrow">O que eu faço</div>
       <h2 class="s-title">Vem comigo<br><em class="glow-word">que você passa de ano</em></h2>
       <p class="s-body s-body-dark">
-        Eu amo estar em sala de aula e desenvolver pessoas. Se você quer trabalhar comigo, hoje eu ofereço os seguintes formatos.
+        Eu amo estar em sala de aula e desenvolver pessoas. Hoje eu trabalho com você de quatro formas.
       </p>
       <div class="work-list">
         <div class="work-card">
@@ -862,7 +893,7 @@
           <div>
             <div class="work-title">Para profissionais de T&amp;D</div>
             <p class="work-body">
-              Formações ao vivo e um curso online sobre como criar e conduzir treinamentos que engajam e geram aprendizagem de verdade, com toda a minha experiência e casca de sala de aula.
+              Formações ao vivo e um curso online para você criar e conduzir treinamentos que engajam e ficam. Toda a minha casca de sala de aula vira método na sua mão.
             </p>
             <a href="workshop.html" class="work-link">Comece pelo workshop gratuito →</a>
           </div>
@@ -872,19 +903,8 @@
           <div class="work-num">02</div>
           <div>
             <div class="work-title">Para empresas</div>
-            <p class="work-body">Palestras, trilhas e imersões em:</p>
-            <ul class="work-topics">
-              <li>Segurança psicológica e prevenção de riscos psicossociais</li>
-              <li>Transformação cultural e inteligência artificial</li>
-              <li>Comunicação estratégica e mediação de conflitos</li>
-              <li>Feedback e empatia assertiva</li>
-              <li>Mentalidade de crescimento e garra</li>
-              <li>Aprendizagem ao longo da vida</li>
-              <li>Autoridade e conflito</li>
-              <li>Relações intergeracionais</li>
-            </ul>
             <p class="work-body">
-              Todas com cases documentados de sucesso, abordagem prática e customizadas para você.
+              Palestras, trilhas e imersões que mudam o comportamento do seu time, de segurança psicológica a transformação cultural com IA. Com cases documentados e desenhadas para o seu contexto.
             </p>
             <a href="empresas.html" class="work-link">Quero levar para a minha empresa →</a>
           </div>
@@ -905,18 +925,60 @@
           <div class="work-num">04</div>
           <div>
             <div class="work-title">Para escolas</div>
-            <p class="work-body">Palestras, formação continuada e apoio estratégico para direção e coordenação pedagógica:</p>
-            <ul class="work-topics">
-              <li>Ensino para equidade — Stanford</li>
-              <li>Prevenção ao bullying — UNICAMP</li>
-              <li>Comunicação e gestão de conflitos</li>
-              <li>Autoridade em sala de aula</li>
-              <li>Trabalho em grupo — Stanford</li>
-              <li>Gestão de sala de aula — Lemov</li>
-              <li>Comunicação Não Violenta — Rosenberg</li>
-              <li>Liderança escolar</li>
-            </ul>
+            <p class="work-body">
+              Palestras, formação continuada e apoio estratégico para direção e coordenação pedagógica, de ensino para equidade a gestão de sala de aula. Ancorado na melhor pesquisa, de Stanford à UNICAMP.
+            </p>
             <a href="escolas.html" class="work-link">Quero levar para a minha escola →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- POR QUE CONFIAR (prova) -->
+  <section class="section section-dark" id="sobre">
+    <div class="wrap">
+      <div class="about-wrap">
+        <div class="about-carousel" id="aboutCarousel">
+          <div class="carousel-slide is-active"><img src="imagem/carol.png" alt="Carol Rosignoli" /></div>
+          <div class="carousel-slide"><img src="imagem/foto_aula02.jpg" alt="Carol em sala de aula" /></div>
+          <div class="carousel-slide"><img src="imagem/foto_work01.jpg" alt="Carol no trabalho" /></div>
+          <div class="carousel-slide"><img src="imagem/foto_work02.jpg" alt="Carol no trabalho" /></div>
+          <button class="carousel-arrow carousel-prev" type="button" aria-label="Foto anterior">‹</button>
+          <button class="carousel-arrow carousel-next" type="button" aria-label="Próxima foto">›</button>
+          <div class="carousel-dots">
+            <button class="carousel-dot is-active" type="button" aria-label="Foto 1"></button>
+            <button class="carousel-dot" type="button" aria-label="Foto 2"></button>
+            <button class="carousel-dot" type="button" aria-label="Foto 3"></button>
+            <button class="carousel-dot" type="button" aria-label="Foto 4"></button>
+          </div>
+        </div>
+        <div>
+          <div class="eyebrow eyebrow-light">Por que confiar em mim</div>
+          <h2 class="about-name">Carol <em>Rosignoli</em><span class="glow-dot"></span></h2>
+          <p class="about-role">Professora formada na USP e em Stanford · Head de Learning e D&amp;I</p>
+          <p class="about-bio">
+            Mestra em Filologia e Língua Portuguesa pela USP, MBA em Gestão Empresarial pela FGV e licenciada em Pedagogia. Quinze anos em sala de aula, dez em T&amp;D corporativo e duas obras aprovadas no PNLD. Passei por Stanford em imersão de formação de professores e pela Universidade de Lisboa em intercâmbio de mérito acadêmico.
+          </p>
+          <p class="about-bio">
+            Pesquisei o ensino de ciências no Brasil, com recorte de gênero e raça, em parceria da Fundação Carlos Chagas com o British Council. Hoje sou Head de Learning e D&amp;I na Alice.
+          </p>
+          <p class="about-bio">
+            Amo dar aula. Faria de graça. Aliás, faço: este workshop é prova disso.
+          </p>
+          <div class="about-stats">
+            <div class="istat">
+              <div class="istat-num">15+</div>
+              <div class="istat-label">anos em sala de aula</div>
+            </div>
+            <div class="istat">
+              <div class="istat-num">10</div>
+              <div class="istat-label">anos em T&amp;D corporativo</div>
+            </div>
+            <div class="istat">
+              <div class="istat-num">2</div>
+              <div class="istat-label">obras aprovadas no PNLD</div>
+            </div>
           </div>
         </div>
       </div>
