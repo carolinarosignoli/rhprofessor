@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Para escolas — Palestras e formação continuada | Carol Rosignoli</title>
-  <meta name="description" content="Palestras, formação continuada e apoio estratégico para direção e coordenação pedagógica. Conte o que a sua escola precisa." />
+  <meta name="description" content="Palestras, formação continuada e apoio estratégico para direção e coordenação pedagógica. Ancorado na melhor pesquisa, de Stanford à UNICAMP." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,700;0,9..144,900;1,9..144,300;1,9..144,400;1,9..144,700;1,9..144,900&family=Hanken+Grotesque:wght@400;500;600&display=swap" rel="stylesheet" />
@@ -12,47 +12,102 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
       --creme:#F5EEDE; --creme-pale:#FAF5E8; --grafite:#241F2E; --grafite-2:#2D2840;
-      --lavanda:#5E547A; --rosa:#A76D8C; --rosa-2:#C195AB; --rosa-deep:#845572;
+      --lavanda:#5E547A; --lavanda-3:#938AAB; --rosa:#A76D8C; --rosa-2:#C195AB; --rosa-deep:#845572;
       --azul:#1F3A4D; --linha:#D9CDB0; --card:#FFFCF4;
-      --text-body:#3A4254; --text-muted:#6B6E7E; --text-faint:#9A93A0;
+      --text-body:#3A4254; --text-muted:#6B6E7E; --text-faint:#9A93A0; --text-dark-muted:#BDB7CC;
     }
     html { scroll-behavior: smooth; }
     body { font-family:'Hanken Grotesque',system-ui,sans-serif; background:var(--creme); color:var(--text-body); line-height:1.6; -webkit-font-smoothing:antialiased; }
+    a { color: inherit; }
 
+    /* NAV */
     nav { background:var(--creme); border-bottom:1px solid var(--linha); height:64px; position:sticky; top:0; z-index:100; }
     .nav-inner { max-width:1200px; margin:0 auto; padding:0 64px; height:100%; display:flex; align-items:center; justify-content:space-between; }
     .nav-brand { font-family:'Fraunces',Georgia,serif; font-size:20px; font-weight:700; color:var(--grafite); letter-spacing:-0.3px; text-decoration:none; }
     .nav-brand em { font-style:italic; color:var(--rosa); }
     .nav-dot { display:inline-block; width:7px; height:7px; border-radius:50%; background:var(--rosa); margin-left:10px; vertical-align:middle; position:relative; top:-1px; box-shadow:0 0 8px 3px rgba(167,109,140,0.45),0 0 18px 6px rgba(167,109,140,0.2); }
-    .nav-back { font-size:14px; font-weight:600; color:var(--grafite); text-decoration:none; display:inline-flex; align-items:center; gap:6px; }
+    .nav-back { font-size:14px; font-weight:600; color:var(--grafite); text-decoration:none; }
     .nav-back:hover { color:var(--rosa); }
 
-    .page { max-width:1200px; margin:0 auto; padding:80px 64px; display:grid; grid-template-columns:1fr 440px; gap:64px; align-items:start; }
-
-    .eyebrow { display:inline-flex; align-items:center; gap:10px; font-size:11px; font-weight:600; letter-spacing:2.5px; text-transform:uppercase; color:var(--rosa-deep); margin-bottom:18px; }
+    /* SHARED */
+    .wrap { max-width:1200px; margin:0 auto; width:100%; }
+    .section { padding:88px 64px; }
+    .section-pale { background:var(--creme-pale); }
+    .section-dark { background:var(--grafite); }
+    .eyebrow { display:inline-flex; align-items:center; gap:10px; font-size:11px; font-weight:600; letter-spacing:2.5px; text-transform:uppercase; color:var(--rosa-deep); margin-bottom:16px; }
     .eyebrow::before { content:''; width:8px; height:8px; border-radius:50%; background:var(--rosa); box-shadow:0 0 12px #C77FA3,0 0 24px rgba(167,109,140,0.45); }
-    .p-title { font-family:'Fraunces',Georgia,serif; font-size:46px; font-weight:900; line-height:1.08; letter-spacing:-0.5px; color:var(--azul); margin-bottom:20px; }
-    .p-title em { font-style:italic; color:var(--rosa); }
-    .p-lead { font-size:17px; color:var(--text-muted); line-height:1.7; max-width:52ch; margin-bottom:28px; }
-    .p-topics { list-style:none; display:grid; grid-template-columns:1fr 1fr; gap:10px 24px; max-width:560px; }
-    .p-topics li { position:relative; padding-left:20px; font-size:14px; color:var(--text-body); line-height:1.45; }
-    .p-topics li::before { content:''; position:absolute; left:0; top:8px; width:7px; height:7px; border-radius:50%; background:var(--rosa-2); }
+    .eyebrow-light { color:var(--rosa-2); }
+    .eyebrow-light::before { background:var(--rosa); }
+    .s-title { font-family:'Fraunces',Georgia,serif; font-size:clamp(2rem,3vw,2.75rem); font-weight:900; line-height:1.1; letter-spacing:-0.5px; color:var(--azul); margin-bottom:18px; }
+    .s-title em { font-style:italic; color:var(--rosa); }
+    .s-title-light { color:var(--creme-pale); }
+    .s-lead { font-size:17px; line-height:1.7; color:var(--text-muted); max-width:60ch; }
 
+    /* BUTTONS */
+    .btn { display:inline-flex; align-items:center; gap:8px; font-family:'Hanken Grotesque',sans-serif; font-size:15px; font-weight:600; padding:14px 28px; border-radius:6px; text-decoration:none; cursor:pointer; border:1px solid transparent; transition:background .15s,border-color .15s,color .15s; }
+    .btn-primary { background:var(--rosa); color:#fff; }
+    .btn-primary:hover { background:var(--rosa-deep); }
+
+    /* HERO */
+    .lp-hero { position:relative; overflow:hidden; }
+    .lp-hero-inner { max-width:1200px; margin:0 auto; padding:80px 64px; display:grid; grid-template-columns:1.05fr 0.95fr; gap:64px; align-items:center; }
+    .lp-hero-title { font-family:'Fraunces',Georgia,serif; font-weight:900; font-size:clamp(2.2rem,3.8vw,3.2rem); line-height:1.06; letter-spacing:-0.5px; color:var(--azul); margin:18px 0 22px; }
+    .lp-hero-title .glow { font-style:italic; color:var(--rosa); text-shadow:0 0 24px rgba(167,109,140,0.38),0 0 48px rgba(167,109,140,0.2); }
+    .lp-hero-sub { font-size:18px; line-height:1.6; color:var(--text-body); max-width:48ch; margin-bottom:32px; }
+    .cr-portrait { position:relative; display:block; overflow:hidden; width:100%; max-width:480px; aspect-ratio:4/5; border:1px solid var(--linha); background:var(--lavanda); border-radius:12px; box-shadow:0 16px 38px -18px rgba(94,84,122,0.55),0 0 30px -8px rgba(167,109,140,0.3); margin-left:auto; }
+    .cr-portrait > img { width:100%; height:100%; object-fit:cover; object-position:center; display:block; filter:grayscale(0.85) contrast(1.12) brightness(1.12); mix-blend-mode:luminosity; }
+    .cr-portrait::before { content:''; position:absolute; inset:0; z-index:1; pointer-events:none; background:linear-gradient(135deg,var(--lavanda),var(--lavanda-3) 55%,var(--creme-pale)); mix-blend-mode:lighten; opacity:0.32; }
+    .cr-orb { position:absolute; border-radius:50%; pointer-events:none; z-index:0; filter:blur(2px); width:560px; height:560px; background:radial-gradient(circle,rgba(199,127,163,0.18) 0%,rgba(199,127,163,0.08) 32%,transparent 70%); }
+
+    /* OFERTA + TEMAS */
+    .topics { list-style:none; display:grid; grid-template-columns:1fr 1fr; gap:12px 28px; margin-top:36px; max-width:780px; }
+    .topics li { position:relative; padding-left:22px; font-size:15px; color:var(--text-body); line-height:1.5; }
+    .topics li::before { content:''; position:absolute; left:0; top:9px; width:7px; height:7px; border-radius:50%; background:var(--rosa-2); }
+
+    /* LOGOS (onde já dei formação) */
+    .logos-row { display:flex; flex-wrap:wrap; gap:12px 14px; margin-top:28px; }
+    .logo-chip { border:1px solid var(--linha); border-radius:999px; padding:9px 18px; font-size:13px; font-weight:600; color:var(--lavanda); background:var(--card); white-space:nowrap; }
+
+    /* DEPOIMENTOS */
+    .testi-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:16px; margin-top:44px; max-width:920px; }
+    .testi-card { background:var(--card); border:1px solid var(--linha); border-radius:14px; padding:32px 28px; display:flex; flex-direction:column; }
+    .testi-quote { position:relative; padding-top:30px; font-size:15px; line-height:1.6; color:var(--text-body); flex:1; }
+    .testi-quote::before { content:'\201C'; position:absolute; top:-8px; left:-3px; font-family:'Fraunces',Georgia,serif; font-size:58px; font-weight:900; color:var(--rosa); opacity:0.35; line-height:1; }
+    .testi-author { margin-top:22px; font-size:13px; line-height:1.4; }
+    .testi-name { font-weight:600; color:var(--grafite); }
+    .testi-role { color:var(--text-muted); }
+
+    /* GALERIA */
+    .gallery { display:grid; grid-template-columns:repeat(2,1fr); gap:16px; margin-top:40px; }
+    .gallery img { width:100%; aspect-ratio:16/10; object-fit:cover; border-radius:12px; border:1px solid var(--linha); display:block; }
+
+    /* PROVA / mini-bio */
+    .proof { display:grid; grid-template-columns:300px 1fr; gap:56px; align-items:center; }
+    .proof-photo { width:100%; aspect-ratio:1/1; object-fit:cover; object-position:center top; border-radius:12px; border:1px solid rgba(255,255,255,0.1); display:block; }
+    .proof-bio { font-size:15px; line-height:1.8; color:var(--text-dark-muted); margin-bottom:14px; max-width:60ch; }
+    .proof-stats { display:flex; gap:0; margin-top:28px; border:1px solid rgba(255,255,255,0.1); border-radius:10px; overflow:hidden; max-width:460px; }
+    .istat { flex:1; padding:18px 20px; border-right:1px solid rgba(255,255,255,0.1); }
+    .istat:last-child { border-right:none; }
+    .istat-num { font-family:'Fraunces',Georgia,serif; font-size:30px; font-weight:900; color:var(--rosa-2); line-height:1; }
+    .istat-label { font-size:11px; color:var(--text-dark-muted); margin-top:4px; line-height:1.4; }
+
+    /* FORM */
+    .form-wrap { display:grid; grid-template-columns:1fr 440px; gap:64px; align-items:start; }
     .form-card { background:var(--card); border:1px solid var(--linha); border-radius:16px; padding:40px 36px; box-shadow:0 8px 32px rgba(36,31,46,0.10),0 2px 8px rgba(36,31,46,0.06); }
     .card-tag { display:inline-block; background:rgba(167,109,140,0.1); color:var(--rosa-deep); font-size:10px; font-weight:600; letter-spacing:2px; text-transform:uppercase; padding:5px 12px; border-radius:3px; margin-bottom:16px; }
     .card-title { font-family:'Fraunces',Georgia,serif; font-size:24px; font-weight:700; color:var(--grafite); line-height:1.2; margin-bottom:6px; }
     .card-title em { font-style:italic; color:var(--rosa); }
     .card-sub { font-size:13px; color:var(--text-faint); margin-bottom:24px; }
-
     .f-group { margin-bottom:14px; }
     .f-label { display:block; font-size:11px; font-weight:600; letter-spacing:1px; text-transform:uppercase; color:var(--text-faint); margin-bottom:6px; }
-    .f-input, .f-select { width:100%; background:var(--creme-pale); border:1px solid var(--linha); border-radius:6px; padding:11px 14px; font-family:'Hanken Grotesque',sans-serif; font-size:14px; color:var(--grafite); outline:none; transition:border-color 0.15s,background 0.15s; appearance:none; }
+    .f-input, .f-select { width:100%; background:var(--creme-pale); border:1px solid var(--linha); border-radius:6px; padding:11px 14px; font-family:'Hanken Grotesque',sans-serif; font-size:14px; color:var(--grafite); outline:none; transition:border-color .15s,background .15s; appearance:none; }
     .f-input::placeholder { color:var(--text-faint); }
     .f-input:focus, .f-select:focus { border-color:var(--rosa); background:#fff; }
+    textarea.f-input { resize:vertical; min-height:88px; line-height:1.5; }
     .f-select { background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11' height='7' viewBox='0 0 11 7'%3E%3Cpath d='M1 1l4.5 4.5L10 1' stroke='%239A93A0' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"); background-repeat:no-repeat; background-position:right 14px center; padding-right:36px; cursor:pointer; }
-    .f-btn { width:100%; background:var(--rosa); color:#fff; border:none; border-radius:6px; padding:15px; font-family:'Hanken Grotesque',sans-serif; font-size:14px; font-weight:600; cursor:pointer; margin-top:8px; transition:background 0.15s; }
+    .f-btn { width:100%; background:var(--rosa); color:#fff; border:none; border-radius:6px; padding:15px; font-family:'Hanken Grotesque',sans-serif; font-size:14px; font-weight:600; cursor:pointer; margin-top:8px; transition:background .15s; }
     .f-btn:hover { background:var(--rosa-deep); }
-    .f-btn:disabled { opacity:0.6; cursor:default; }
+    .f-btn:disabled { opacity:.6; cursor:default; }
     .f-note { font-size:11px; color:var(--text-faint); text-align:center; margin-top:12px; }
     .f-check-group { display:flex; align-items:flex-start; gap:10px; margin-top:14px; margin-bottom:4px; }
     .f-check-group input[type="checkbox"] { width:16px; min-width:16px; height:16px; margin-top:2px; accent-color:var(--rosa); cursor:pointer; }
@@ -62,18 +117,24 @@
     .f-success-title { font-family:'Fraunces',Georgia,serif; font-size:24px; font-weight:700; color:var(--grafite); margin-bottom:8px; }
     .f-success-sub { font-size:14px; color:var(--text-muted); line-height:1.6; }
 
-    footer { background:var(--grafite-2); border-top:1px solid rgba(255,255,255,0.06); padding:32px 64px; font-size:13px; color:#938AAB; text-align:center; }
+    footer { background:var(--grafite-2); border-top:1px solid rgba(255,255,255,0.06); padding:32px 64px; font-size:13px; color:var(--lavanda-3); text-align:center; }
 
+    /* RESPONSIVE */
     @media (max-width:900px) {
       .nav-inner { padding:0 24px; }
-      .page { grid-template-columns:1fr; padding:48px 24px; gap:40px; }
-      .p-title { font-size:36px; }
-      .p-topics { grid-template-columns:1fr 1fr; }
+      .section { padding:64px 24px; }
+      .lp-hero-inner { grid-template-columns:1fr; padding:48px 24px; gap:40px; }
+      .cr-portrait { order:-1; max-width:340px; margin:0; }
+      .testi-grid { grid-template-columns:1fr; }
+      .gallery { grid-template-columns:1fr 1fr; }
+      .proof { grid-template-columns:1fr; gap:32px; }
+      .proof-photo { max-width:260px; }
+      .form-wrap { grid-template-columns:1fr; gap:36px; }
     }
     @media (max-width:560px) {
-      .p-topics { grid-template-columns:1fr; }
+      .topics { grid-template-columns:1fr; }
+      .gallery { grid-template-columns:1fr; }
       .form-card { padding:28px 22px; }
-      .p-title { font-size:30px; }
     }
   </style>
 </head>
@@ -85,14 +146,55 @@
     </div>
   </nav>
 
-  <main class="page">
-    <div>
-      <div class="eyebrow">Para escolas</div>
-      <h1 class="p-title">Palestras e formação<br><em>para a sua escola</em></h1>
-      <p class="p-lead">
-        Palestras, formação continuada e apoio estratégico para direção e coordenação pedagógica. Temas que eu trabalho:
+  <!-- HERO -->
+  <section class="lp-hero">
+    <span class="cr-orb" style="top:-120px; right:-160px;" aria-hidden="true"></span>
+    <div class="lp-hero-inner">
+      <div>
+        <div class="eyebrow">Para escolas</div>
+        <h1 class="lp-hero-title">
+          Forme a sua escola com quem<br>
+          <span class="glow">viveu a sala de aula.</span>
+        </h1>
+        <p class="lp-hero-sub">
+          Palestras, formação continuada e apoio estratégico para direção e coordenação pedagógica. Ancorado na melhor pesquisa, de Stanford à UNICAMP.
+        </p>
+        <a href="#form" class="btn btn-primary">Quero uma proposta →</a>
+      </div>
+      <div class="cr-portrait">
+        <img src="imagem/escola01.jpeg" alt="Carol Rosignoli em formação para escolas" />
+      </div>
+    </div>
+  </section>
+
+  <!-- LOGOS (onde já dei formação) -->
+  <section class="section" style="padding-bottom:0;">
+    <div class="wrap">
+      <div class="eyebrow">Já dei formação em</div>
+      <div class="logos-row">
+        <span class="logo-chip">Secretaria de São Paulo</span>
+        <span class="logo-chip">Secretaria do Paraná</span>
+        <span class="logo-chip">EFAPE São Paulo</span>
+        <span class="logo-chip">Tom Educação</span>
+        <span class="logo-chip">Instituto Sidarta</span>
+        <span class="logo-chip">Instituto Cacau Show</span>
+        <span class="logo-chip">Parceiros da Educação</span>
+        <span class="logo-chip">Somos Educação</span>
+        <span class="logo-chip">Colégio PH</span>
+        <span class="logo-chip">Escola Tarsila do Amaral</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- OFERTA + TEMAS -->
+  <section class="section">
+    <div class="wrap">
+      <div class="eyebrow">O que eu levo</div>
+      <h2 class="s-title">Formação que muda<br>a <em>prática</em></h2>
+      <p class="s-lead">
+        Encontros desenhados para o seu contexto, com método de quem passou quinze anos em sala de aula. Os temas que eu trabalho:
       </p>
-      <ul class="p-topics">
+      <ul class="topics">
         <li>Ensino para equidade · Stanford</li>
         <li>Prevenção ao bullying · UNICAMP</li>
         <li>Comunicação e gestão de conflitos</li>
@@ -103,54 +205,128 @@
         <li>Liderança escolar</li>
       </ul>
     </div>
+  </section>
 
-    <div class="form-card">
-      <div class="card-tag">Solicitar proposta</div>
-      <h2 class="card-title">Conte o que a sua<br><em>escola precisa</em></h2>
-      <p class="card-sub">Respondo pessoalmente para montarmos algo sob medida.</p>
-
-      <form id="lead-form">
-        <div class="f-group">
-          <label class="f-label" for="nome">Nome completo</label>
-          <input class="f-input" type="text" id="nome" name="nome" placeholder="Seu nome" required />
+  <!-- DEPOIMENTOS (placeholder) -->
+  <section class="section section-pale">
+    <div class="wrap">
+      <div class="eyebrow">Quem já viveu</div>
+      <h2 class="s-title">O que dizem as<br><em>escolas</em></h2>
+      <div class="testi-grid">
+        <div class="testi-card">
+          <p class="testi-quote">Obrigada pela manhã maravilhosa, foi muito bom mesmo. Parabéns, ficamos encantados. A equipe aprendeu muito, e a atividade dos círculos partidos foi muito especial.</p>
+          <div class="testi-author">
+            <div class="testi-name">Diretora Pedagógica</div>
+            <div class="testi-role">Escola Tarsila do Amaral</div>
+          </div>
         </div>
-        <div class="f-group">
-          <label class="f-label" for="email">E-mail</label>
-          <input class="f-input" type="email" id="email" name="email" placeholder="voce@escola.com" required />
+        <div class="testi-card">
+          <p class="testi-quote">A equipe já está pedindo para você voltar no ano que vem com mais conteúdo. Foi muito bacana e enriquecedor para os professores.</p>
+          <div class="testi-author">
+            <div class="testi-name">Equipe pedagógica</div>
+            <div class="testi-role">Colégio PH</div>
+          </div>
         </div>
-        <div class="f-group">
-          <label class="f-label" for="empresa">Escola / Instituição</label>
-          <input class="f-input" type="text" id="empresa" name="empresa" placeholder="Nome da escola" required />
-        </div>
-        <div class="f-group">
-          <label class="f-label" for="cargo">Cargo</label>
-          <select class="f-select" id="cargo" name="cargo">
-            <option value="" disabled selected>Selecione seu cargo</option>
-            <option>Direção</option>
-            <option>Coordenação pedagógica</option>
-            <option>Professor(a)</option>
-            <option>Mantenedor(a)</option>
-            <option>Outro</option>
-          </select>
-        </div>
-        <div class="f-group">
-          <label class="f-label" for="telefone">WhatsApp</label>
-          <input class="f-input" type="tel" id="telefone" name="telefone" placeholder="(11) 99999-9999" />
-        </div>
-        <div class="f-check-group">
-          <input type="checkbox" id="aceite" name="aceite" value="sim" required />
-          <label class="f-check-label" for="aceite">Aceito ser contatada(o) pela Carol sobre esta solicitação.</label>
-        </div>
-        <button class="f-btn" type="submit" id="btn">Quero uma proposta →</button>
-        <p class="f-note">Seus dados estão seguros. Sem spam, prometemos.</p>
-      </form>
-      <div id="ok" class="f-success" style="display:none">
-        <div class="f-success-icon">✓</div>
-        <p class="f-success-title">Recebido!</p>
-        <p class="f-success-sub">Obrigada pelo interesse — em breve eu entro em contato para conversarmos.</p>
       </div>
     </div>
-  </main>
+  </section>
+
+  <!-- GALERIA -->
+  <section class="section">
+    <div class="wrap">
+      <div class="eyebrow">Carol em ação</div>
+      <h2 class="s-title">Como é estar<br>em <em>formação</em></h2>
+      <div class="gallery">
+        <img src="imagem/escola02.jpeg" alt="Carol em formação para escola" />
+        <img src="imagem/escola03.jpeg" alt="Carol em formação para escola" />
+        <img src="imagem/escola05.jpg" alt="Carol em formação para escola" />
+        <img src="imagem/escola06.jpeg" alt="Carol em formação para escola" />
+      </div>
+    </div>
+  </section>
+
+  <!-- PROVA / mini-bio -->
+  <section class="section section-dark">
+    <div class="wrap">
+      <div class="proof">
+        <img class="proof-photo" src="imagem/carol.png" alt="Carol Rosignoli" />
+        <div>
+          <div class="eyebrow eyebrow-light">Por que confiar em mim</div>
+          <h2 class="s-title s-title-light">Carol <em>Rosignoli</em></h2>
+          <p class="proof-bio">
+            Mestra em Filologia e Língua Portuguesa pela USP, MBA pela FGV e licenciada em Pedagogia. Quinze anos em sala de aula, dez em T&amp;D corporativo e duas obras aprovadas no PNLD. Passei por Stanford em imersão de formação de professores e pela Universidade de Lisboa em intercâmbio de mérito acadêmico.
+          </p>
+          <div class="proof-stats">
+            <div class="istat"><div class="istat-num">15+</div><div class="istat-label">anos em sala de aula</div></div>
+            <div class="istat"><div class="istat-num">2</div><div class="istat-label">obras aprovadas no PNLD</div></div>
+            <div class="istat"><div class="istat-num">USP</div><div class="istat-label">Stanford e FGV</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FORM -->
+  <section class="section section-pale" id="form">
+    <div class="wrap">
+      <div class="form-wrap">
+        <div>
+          <div class="eyebrow">Próximo passo</div>
+          <h2 class="s-title">Vamos <em>conversar?</em></h2>
+          <p class="s-lead">
+            Me conta mais que eu te respondo pessoalmente e planejamos juntos o próximo passo formativo da sua escola.
+          </p>
+        </div>
+        <div class="form-card">
+          <div class="card-tag">Fale comigo</div>
+          <form id="lead-form">
+            <div class="f-group">
+              <label class="f-label" for="nome">Nome completo</label>
+              <input class="f-input" type="text" id="nome" name="nome" placeholder="Seu nome" required />
+            </div>
+            <div class="f-group">
+              <label class="f-label" for="email">E-mail</label>
+              <input class="f-input" type="email" id="email" name="email" placeholder="voce@escola.com" required />
+            </div>
+            <div class="f-group">
+              <label class="f-label" for="empresa">Escola / Instituição</label>
+              <input class="f-input" type="text" id="empresa" name="empresa" placeholder="Nome da escola" required />
+            </div>
+            <div class="f-group">
+              <label class="f-label" for="cargo">Cargo</label>
+              <select class="f-select" id="cargo" name="cargo">
+                <option value="" disabled selected>Selecione seu cargo</option>
+                <option>Direção</option>
+                <option>Coordenação pedagógica</option>
+                <option>Professor(a)</option>
+                <option>Mantenedor(a)</option>
+                <option>Outro</option>
+              </select>
+            </div>
+            <div class="f-group">
+              <label class="f-label" for="telefone">WhatsApp</label>
+              <input class="f-input" type="tel" id="telefone" name="telefone" placeholder="(11) 99999-9999" />
+            </div>
+            <div class="f-group">
+              <label class="f-label" for="conta_mais">Conta mais</label>
+              <textarea class="f-input" id="conta_mais" name="conta_mais" rows="3" placeholder="O que a sua escola precisa? Tema, público, formato, data..."></textarea>
+            </div>
+            <div class="f-check-group">
+              <input type="checkbox" id="aceite" name="aceite" value="sim" required />
+              <label class="f-check-label" for="aceite">Aceito ser contatada(o) pela Carol sobre esta solicitação.</label>
+            </div>
+            <button class="f-btn" type="submit" id="btn">Quero conversar →</button>
+            <p class="f-note">Seus dados estão seguros. Sem spam, prometemos.</p>
+          </form>
+          <div id="ok" class="f-success" style="display:none">
+            <div class="f-success-icon">✓</div>
+            <p class="f-success-title">Recebido!</p>
+            <p class="f-success-sub">Obrigada pelo interesse, em breve eu entro em contato para conversarmos.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <footer>© 2026 Carol Rosignoli · RH Professor</footer>
 
@@ -183,13 +359,15 @@
         empresa: data.get('empresa') || null,
         cargo: data.get('cargo') || null,
         telefone: data.get('telefone') || null,
+        conta_mais: data.get('conta_mais') || null,
         aceite_whatsapp: data.get('aceite') === 'sim',
         produto: PRODUTO,
       };
 
       let res = await post(payload);
       if (!res.ok) {
-        const { produto, ...rest } = payload;
+        // Fallback: novas colunas podem não existir ainda; reenvia sem elas.
+        const { produto, conta_mais, ...rest } = payload;
         res = await post(rest);
       }
 
