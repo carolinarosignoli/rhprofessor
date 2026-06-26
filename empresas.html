@@ -33,6 +33,9 @@
     .eyebrow::before { content:''; width:8px; height:8px; border-radius:50%; background:var(--rosa); box-shadow:0 0 12px #C77FA3,0 0 24px rgba(167,109,140,0.45); }
     .p-title { font-family:'Fraunces',Georgia,serif; font-size:46px; font-weight:900; line-height:1.08; letter-spacing:-0.5px; color:var(--azul); margin-bottom:20px; }
     .p-title em { font-style:italic; color:var(--rosa); }
+    .p-title s { text-decoration:none; position:relative; color:var(--text-muted); }
+    .p-title s::after { content:''; position:absolute; left:-2%; right:-2%; top:54%; height:5px; background:var(--rosa); border-radius:3px; transform:rotate(-2deg); }
+    .p-subhead { font-family:'Fraunces',Georgia,serif; font-size:26px; font-weight:700; line-height:1.3; color:var(--azul); max-width:24ch; margin-bottom:28px; }
     .p-lead { font-size:17px; color:var(--text-muted); line-height:1.7; max-width:52ch; margin-bottom:28px; }
     .p-topics { list-style:none; display:grid; grid-template-columns:1fr 1fr; gap:10px 24px; max-width:560px; }
     .p-topics li { position:relative; padding-left:20px; font-size:14px; color:var(--text-body); line-height:1.45; }
@@ -62,6 +65,26 @@
     .f-success-title { font-family:'Fraunces',Georgia,serif; font-size:24px; font-weight:700; color:var(--grafite); margin-bottom:8px; }
     .f-success-sub { font-size:14px; color:var(--text-muted); line-height:1.6; }
 
+    /* ---- Galeria / carrossel ---- */
+    .gallery { border-top:1px solid var(--linha); background:var(--creme-pale); }
+    .gallery-inner { max-width:1200px; margin:0 auto; padding:72px 64px; }
+    .gallery-head { display:flex; align-items:flex-end; justify-content:space-between; gap:24px; margin-bottom:32px; flex-wrap:wrap; }
+    .gallery-title { font-family:'Fraunces',Georgia,serif; font-size:34px; font-weight:900; line-height:1.1; letter-spacing:-0.5px; color:var(--azul); }
+    .gallery-title em { font-style:italic; color:var(--rosa); }
+    .car-nav { display:flex; gap:10px; }
+    .car-btn { width:44px; height:44px; border-radius:50%; border:1px solid var(--linha); background:var(--creme); color:var(--grafite); font-size:20px; line-height:1; cursor:pointer; display:flex; align-items:center; justify-content:center; transition:background 0.15s,color 0.15s,border-color 0.15s; }
+    .car-btn:hover { background:var(--rosa); color:#fff; border-color:var(--rosa); }
+    .car-viewport { display:flex; gap:20px; overflow-x:auto; scroll-snap-type:x mandatory; scroll-behavior:smooth; padding-bottom:6px; -ms-overflow-style:none; scrollbar-width:none; }
+    .car-viewport::-webkit-scrollbar { display:none; }
+    .slide { flex:0 0 calc((100% - 40px) / 3); scroll-snap-align:start; }
+    .slide-img { position:relative; aspect-ratio:4/3; border-radius:14px; overflow:hidden; background:linear-gradient(135deg,#E8DDE6,#D8C4D2); border:1px solid var(--linha); display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px; }
+    .slide-img img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
+    .slide-ph { font-size:34px; opacity:0.55; }
+    .slide-ph-txt { font-size:12px; font-weight:600; letter-spacing:1.5px; text-transform:uppercase; color:var(--rosa-deep); opacity:0.8; }
+    .slide-cap { padding:14px 2px 0; }
+    .slide-event { display:block; font-family:'Fraunces',Georgia,serif; font-size:17px; font-weight:700; color:var(--grafite); line-height:1.25; margin-bottom:3px; }
+    .slide-place { display:block; font-size:13px; color:var(--text-muted); }
+
     footer { background:var(--grafite-2); border-top:1px solid rgba(255,255,255,0.06); padding:32px 64px; font-size:13px; color:#938AAB; text-align:center; }
 
     @media (max-width:900px) {
@@ -69,11 +92,15 @@
       .page { grid-template-columns:1fr; padding:48px 24px; gap:40px; }
       .p-title { font-size:36px; }
       .p-topics { grid-template-columns:1fr 1fr; }
+      .gallery-inner { padding:56px 24px; }
+      .slide { flex:0 0 calc((100% - 20px) / 2); }
     }
     @media (max-width:560px) {
       .p-topics { grid-template-columns:1fr; }
       .form-card { padding:28px 22px; }
       .p-title { font-size:30px; }
+      .gallery-title { font-size:28px; }
+      .slide { flex:0 0 100%; }
     }
   </style>
 </head>
@@ -88,22 +115,28 @@
   <main class="page">
     <div>
       <div class="eyebrow">Para empresas</div>
-      <h1 class="p-title">Palestras, workshops e imersões<br><em>para o seu time</em></h1>
+      <h1 class="p-title"><s>Palestras</s></h1>
+      <p class="p-subhead">Palestra não funciona. Se você chegou até aqui procurando palestra, vou te explicar o que podemos fazer juntos que realmente ajude seu time.</p>
       <p class="p-lead">
-        Levo método de sala de aula e resultado de negócio para dentro da sua empresa. Temas que eu trabalho:
+        Transformações de cultura, comportamento e aprendizagem são tipo jardinagem: precisa da semente ou da muda, depois tem que aguar a terra, adubar, ajustar a luz, o sol... Tentar resolver com palestra é tipo comprar aquele lindo girassol plantado na floricultura que vai morrer depois de 7 dias.
+      </p>
+      <p class="p-subhead">Então como eu te ajudo?</p>
+      <p class="p-lead">
+        Conduzindo imersões e workshops que fertilizam o terreno, seja com alta liderança, seja com o time que precisa se transformar. E, na sequência, posso te apoiar pra você, RH, conduzir a transformação completa desse jardim.
+      </p>
+      <p class="p-lead">
+        Temas que eu trabalho:
       </p>
       <ul class="p-topics">
-        <li>Segurança psicológica e prevenção de riscos psicossociais</li>
-        <li>Transformação cultural e inteligência artificial</li>
-        <li>Comunicação estratégica e mediação de conflitos</li>
-        <li>Feedback e empatia assertiva</li>
+        <li>Segurança psicológica e cultura de coragem</li>
+        <li>Comunicação estratégica, autoridade e conflitos</li>
         <li>Mentalidade de crescimento e garra</li>
+        <li>Feedback e empatia assertiva</li>
         <li>Aprendizagem ao longo da vida</li>
-        <li>Autoridade e conflito</li>
         <li>Relações intergeracionais</li>
       </ul>
       <p class="p-lead" style="margin-top:24px;">
-        Todas com cases documentados de sucesso, abordagem prática e customizadas para você.
+        A gente organiza o ponto de partida comigo, e eu te apoio pra você liderar essa transformação depois. Vamos juntos?
       </p>
     </div>
 
@@ -155,9 +188,52 @@
     </div>
   </main>
 
+  <section class="gallery">
+    <div class="gallery-inner">
+      <div class="gallery-head">
+        <div>
+          <div class="eyebrow">Em ação</div>
+          <h2 class="gallery-title">Espalhando <em>sementes de transformação</em></h2>
+        </div>
+        <div class="car-nav">
+          <button class="car-btn" id="car-prev" aria-label="Anterior">‹</button>
+          <button class="car-btn" id="car-next" aria-label="Próximo">›</button>
+        </div>
+      </div>
+      <div class="car-viewport" id="car-viewport">
+        <figure class="slide">
+          <div class="slide-img"><img src="imagem/empresas01.jpg" alt="Papo com Lideranças de RH sobre NR1 e Segurança Psicológica" loading="lazy"></div>
+          <figcaption class="slide-cap"><span class="slide-event">Papo com Lideranças de RH sobre NR1 e Segurança Psicológica</span></figcaption>
+        </figure>
+        <figure class="slide">
+          <div class="slide-img"><img src="imagem/empresas02.jpg" alt="Formações e imersões em gestão do conhecimento" loading="lazy"></div>
+          <figcaption class="slide-cap"><span class="slide-event">Formações e imersões em gestão do conhecimento</span></figcaption>
+        </figure>
+        <figure class="slide">
+          <div class="slide-img"><img src="imagem/empresas03.jpg" alt="Painel na InspiraVelle sobre Inovação e transformação cultural em IA" loading="lazy"></div>
+          <figcaption class="slide-cap"><span class="slide-event">Painel na InspiraVelle sobre Inovação e transformação cultural em IA</span></figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
   <footer>© 2026 Carol Rosignoli · RH Professor</footer>
 
   <script>
+    // ---- Carrossel ----
+    (function () {
+      const vp = document.getElementById('car-viewport');
+      if (!vp) return;
+      function step() {
+        const slide = vp.querySelector('.slide');
+        if (!slide) return vp.clientWidth;
+        const gap = parseFloat(getComputedStyle(vp).columnGap || getComputedStyle(vp).gap || 20) || 20;
+        return slide.getBoundingClientRect().width + gap;
+      }
+      document.getElementById('car-prev').addEventListener('click', () => vp.scrollBy({ left: -step(), behavior: 'smooth' }));
+      document.getElementById('car-next').addEventListener('click', () => vp.scrollBy({ left: step(), behavior: 'smooth' }));
+    })();
+
     const SUPA_URL = 'https://ourncyxuudixmzamheaj.supabase.co/rest/v1/leads';
     const SUPA_KEY = 'sb_publishable_sUO9v5LbhojT-06YlPWIAQ_R9Lb1qxn';
     const PRODUTO = 'Empresas';
