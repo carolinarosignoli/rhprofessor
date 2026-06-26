@@ -41,6 +41,40 @@
     .p-topics li { position:relative; padding-left:20px; font-size:14px; color:var(--text-body); line-height:1.45; }
     .p-topics li::before { content:''; position:absolute; left:0; top:8px; width:7px; height:7px; border-radius:50%; background:var(--rosa-2); }
 
+    /* ---- Temas (acordeão, largura total) ---- */
+    .temas-section { border-top:1px solid var(--linha); }
+    .temas-inner { max-width:1200px; margin:0 auto; padding:72px 64px; }
+    .temas-title { font-family:'Fraunces',Georgia,serif; font-size:clamp(28px,3.4vw,40px); font-weight:900; line-height:1.12; letter-spacing:-0.5px; color:var(--azul); margin:0 0 28px; }
+    .temas-title em { font-style:italic; color:var(--rosa); }
+    .tema-list { border-top:1px solid var(--linha); margin-bottom:28px; }
+    .tema { position:relative; border-bottom:1px solid var(--linha); transition:background-color 0.25s ease; }
+    .tema::before { content:''; position:absolute; left:0; top:0; bottom:0; width:3px; background:var(--rosa); box-shadow:0 0 14px rgba(167,109,140,0.6),0 0 28px rgba(167,109,140,0.3); transform:scaleY(0); transform-origin:top; transition:transform 0.28s ease; }
+    .tema:hover { background:rgba(167,109,140,0.06); }
+    .tema:hover::before, .tema[open]::before { transform:scaleY(1); }
+    .tema__head { list-style:none; cursor:pointer; display:grid; grid-template-columns:clamp(2.6rem,5vw,4.5rem) 1fr auto; align-items:start; gap:6px clamp(1rem,3vw,2.5rem); padding:clamp(1.5rem,2.6vw,2.2rem) clamp(0.75rem,1.6vw,1.4rem); }
+    .tema__head::-webkit-details-marker { display:none; }
+    .tema__head:focus-visible { outline:2px solid var(--rosa); outline-offset:-3px; border-radius:4px; }
+    .tema__num { font-family:'Fraunces',Georgia,serif; font-weight:900; font-size:clamp(2rem,3.6vw,3rem); line-height:0.9; color:var(--rosa-2); letter-spacing:-1.5px; transition:color 0.2s,text-shadow 0.2s; }
+    .tema:hover .tema__num, .tema[open] .tema__num { color:var(--rosa); text-shadow:0 0 20px rgba(167,109,140,0.4),0 0 40px rgba(167,109,140,0.2); }
+    .tema__body { display:flex; flex-direction:column; gap:6px; min-width:0; }
+    .tema__concept { font-family:'Fraunces',Georgia,serif; font-weight:800; font-size:clamp(1.3rem,2vw,1.75rem); line-height:1.16; letter-spacing:-0.02em; color:var(--azul); }
+    .tema__promise { font-size:clamp(15px,1.2vw,18px); color:var(--text-body); line-height:1.45; max-width:60ch; }
+    .tema__aside { font-family:'Fraunces',Georgia,serif; font-style:italic; font-size:15px; color:var(--rosa-deep); margin-top:2px; }
+    .tema__toggle { position:relative; align-self:center; width:18px; height:18px; flex:none; }
+    .tema__toggle::before, .tema__toggle::after { content:''; position:absolute; background:var(--rosa-deep); border-radius:2px; transition:transform 0.22s,opacity 0.22s,background 0.2s; }
+    .tema__toggle::before { left:0; right:0; top:8px; height:2px; }
+    .tema__toggle::after { top:0; bottom:0; left:8px; width:2px; }
+    .tema[open] .tema__toggle::after { transform:scaleY(0); opacity:0; }
+    .tema:hover .tema__toggle::before, .tema:hover .tema__toggle::after { background:var(--rosa); }
+    .tema__panel { padding:0 1.4rem 24px clamp(3.6rem,8vw,7rem); max-width:78ch; animation:tema-open 0.25s ease; }
+    .tema__panel p { font-size:15px; color:var(--text-muted); line-height:1.7; }
+    .tema__panel .tema__panel-label { font-size:11px; font-weight:600; letter-spacing:2px; text-transform:uppercase; color:var(--rosa-deep); margin-bottom:12px; }
+    .tema__books { list-style:none; display:flex; flex-direction:column; gap:9px; }
+    .tema__books li { position:relative; padding-left:18px; font-size:15px; color:var(--text-body); line-height:1.5; }
+    .tema__books li::before { content:''; position:absolute; left:0; top:9px; width:6px; height:6px; border-radius:50%; background:var(--rosa-2); }
+    .tema__books li span { color:var(--text-muted); }
+    @keyframes tema-open { from { opacity:0; transform:translateY(-4px); } to { opacity:1; transform:none; } }
+
     .form-card { background:var(--card); border:1px solid var(--linha); border-radius:16px; padding:40px 36px; box-shadow:0 8px 32px rgba(36,31,46,0.10),0 2px 8px rgba(36,31,46,0.06); }
     .card-tag { display:inline-block; background:rgba(167,109,140,0.1); color:var(--rosa-deep); font-size:10px; font-weight:600; letter-spacing:2px; text-transform:uppercase; padding:5px 12px; border-radius:3px; margin-bottom:16px; }
     .card-title { font-family:'Fraunces',Georgia,serif; font-size:24px; font-weight:700; color:var(--grafite); line-height:1.2; margin-bottom:6px; }
@@ -93,6 +127,7 @@
       .p-title { font-size:36px; }
       .p-topics { grid-template-columns:1fr 1fr; }
       .gallery-inner { padding:56px 24px; }
+      .temas-inner { padding:56px 24px; }
       .slide { flex:0 0 calc((100% - 20px) / 2); }
     }
     @media (max-width:560px) {
@@ -123,20 +158,6 @@
       <p class="p-subhead">Então como eu te ajudo?</p>
       <p class="p-lead">
         Conduzindo imersões e workshops que fertilizam o terreno, seja com alta liderança, seja com o time que precisa se transformar. E, na sequência, posso te apoiar pra você, RH, conduzir a transformação completa desse jardim.
-      </p>
-      <p class="p-lead">
-        Temas que eu trabalho:
-      </p>
-      <ul class="p-topics">
-        <li>Segurança psicológica e cultura de coragem</li>
-        <li>Comunicação estratégica, autoridade e conflitos</li>
-        <li>Mentalidade de crescimento e garra</li>
-        <li>Feedback e empatia assertiva</li>
-        <li>Aprendizagem ao longo da vida</li>
-        <li>Relações intergeracionais</li>
-      </ul>
-      <p class="p-lead" style="margin-top:24px;">
-        A gente organiza o ponto de partida comigo, e eu te apoio pra você liderar essa transformação depois. Vamos juntos?
       </p>
     </div>
 
@@ -187,6 +208,135 @@
       </div>
     </div>
   </main>
+
+  <section class="temas-section">
+    <div class="temas-inner">
+      <h2 class="temas-title">Temas que eu trabalho<br><em>6 sementes para fertilizar seu solo</em></h2>
+      <div class="tema-list">
+        <details class="tema">
+          <summary class="tema__head">
+            <span class="tema__num">01</span>
+            <span class="tema__body">
+              <span class="tema__concept">Segurança psicológica</span>
+              <span class="tema__promise">O que faz um time ter coragem de ousar e falar a verdade.</span>
+              <span class="tema__aside">(antes da Rádio Peão fazer isso por você)</span>
+            </span>
+            <span class="tema__toggle" aria-hidden="true"></span>
+          </summary>
+          <div class="tema__panel">
+            <p class="tema__panel-label">Abordagem</p>
+            <ul class="tema__books">
+              <li>A organização sem medo <span>(Amy Edmondson)</span></li>
+              <li>A coragem de ser imperfeito <span>(Brené Brown)</span></li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="tema">
+          <summary class="tema__head">
+            <span class="tema__num">02</span>
+            <span class="tema__body">
+              <span class="tema__concept">Autoridade sem autoritarismo</span>
+              <span class="tema__promise">Como conduzir conflitos e construir autoridade de verdade sem perder o time.</span>
+              <span class="tema__aside">(e sem voltar o time contra você)</span>
+            </span>
+            <span class="tema__toggle" aria-hidden="true"></span>
+          </summary>
+          <div class="tema__panel">
+            <p class="tema__panel-label">Abordagem</p>
+            <ul class="tema__books">
+              <li>Trabalhando com o inimigo <span>(Adam Kahane)</span></li>
+              <li>Vigiar e punir <span>(Michel Foucault)</span></li>
+              <li>Ensinando a transgredir <span>(bell hooks)</span></li>
+              <li>Escola e construção de valores <span>(Vera Lucia Trevisan)</span></li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="tema">
+          <summary class="tema__head">
+            <span class="tema__num">03</span>
+            <span class="tema__body">
+              <span class="tema__concept">Mentalidade de crescimento e garra</span>
+              <span class="tema__promise">O que separa as pessoas que brilham e entregam muito das demais.</span>
+              <span class="tema__aside">(juro que não tem uma vírgula de papo de coach)</span>
+            </span>
+            <span class="tema__toggle" aria-hidden="true"></span>
+          </summary>
+          <div class="tema__panel">
+            <p class="tema__panel-label">Abordagem</p>
+            <ul class="tema__books">
+              <li>Mindset <span>(Carol Dweck)</span></li>
+              <li>Garra <span>(Angela Duckworth)</span></li>
+              <li>Mentes sem barreiras <span>(Jo Boaler)</span></li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="tema">
+          <summary class="tema__head">
+            <span class="tema__num">04</span>
+            <span class="tema__body">
+              <span class="tema__concept">Feedback e conversas difíceis</span>
+              <span class="tema__promise">Técnicas para conversas que desenvolvem.</span>
+              <span class="tema__aside">(sem técnica do sanduíche e outros flops corporativos)</span>
+            </span>
+            <span class="tema__toggle" aria-hidden="true"></span>
+          </summary>
+          <div class="tema__panel">
+            <p class="tema__panel-label">Abordagem</p>
+            <ul class="tema__books">
+              <li>Empatia assertiva <span>(Kim Scott)</span></li>
+              <li>Comunicação Não Violenta <span>(Marshall Rosenberg)</span></li>
+              <li>Trabalhando com o inimigo <span>(Adam Kahane)</span></li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="tema">
+          <summary class="tema__head">
+            <span class="tema__num">05</span>
+            <span class="tema__body">
+              <span class="tema__concept">Aprendizagem ao longo da vida e na velocidade da mudança</span>
+              <span class="tema__aside">(inclusive de IA, mas sem receita mágica, ok?)</span>
+            </span>
+            <span class="tema__toggle" aria-hidden="true"></span>
+          </summary>
+          <div class="tema__panel">
+            <p class="tema__panel-label">Abordagem</p>
+            <ul class="tema__books">
+              <li>Mindset <span>(Carol Dweck)</span></li>
+              <li>Cointeligência: a vida e o trabalho com IA <span>(Ethan Mollick)</span></li>
+              <li>Rápido e devagar <span>(Daniel Kahneman)</span></li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="tema">
+          <summary class="tema__head">
+            <span class="tema__num">06</span>
+            <span class="tema__body">
+              <span class="tema__concept">Gerações em conflito no trabalho</span>
+              <span class="tema__promise">Use as diferenças geracionais a favor da empresa.</span>
+              <span class="tema__aside">(não seja cringe)</span>
+            </span>
+            <span class="tema__toggle" aria-hidden="true"></span>
+          </summary>
+          <div class="tema__panel">
+            <p class="tema__panel-label">Abordagem</p>
+            <ul class="tema__books">
+              <li>Modernidade líquida <span>(Zygmunt Bauman)</span></li>
+              <li>A geração ansiosa <span>(Jonathan Haidt)</span></li>
+              <li>O livro que você gostaria que seus pais tivessem lido <span>(Philippa Perry)</span></li>
+            </ul>
+          </div>
+        </details>
+      </div>
+      <p class="p-lead" style="margin-top:28px;max-width:none;">
+        A gente organiza o ponto de partida comigo, e eu te apoio pra você liderar essa transformação depois. Vamos juntos?
+      </p>
+    </div>
+  </section>
 
   <section class="gallery">
     <div class="gallery-inner">
