@@ -736,6 +736,110 @@
       .section { padding: 48px 16px; }
       .btn { width: 100%; justify-content: center; }
     }
+
+    /* ─── CASES (marquee lilás) ─── */
+    .cases {
+      background: linear-gradient(135deg, var(--lavanda) 0%, var(--lavanda-2) 100%);
+      padding: 80px 0 88px;
+      overflow: hidden;
+    }
+    .cases-head {
+      max-width: 1200px;
+      margin: 0 auto 44px;
+      padding: 0 80px;
+    }
+    .cases .eyebrow { color: var(--rosa-2); }
+    .cases-title {
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: 40px;
+      font-weight: 900;
+      line-height: 1.1;
+      letter-spacing: -0.5px;
+      color: var(--creme-pale);
+    }
+    .cases-title em { font-style: italic; color: var(--rosa-2); }
+    .cases-sub {
+      font-size: 16px;
+      line-height: 1.7;
+      color: var(--text-dark-muted);
+      max-width: 560px;
+      margin-top: 14px;
+    }
+    .cases-marquee {
+      position: relative;
+      width: 100%;
+      overflow-x: auto;
+      overflow-y: hidden;
+      cursor: grab;
+      scrollbar-width: none;
+      -webkit-overflow-scrolling: touch;
+      -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+              mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+    }
+    .cases-marquee::-webkit-scrollbar { display: none; }
+    .cases-marquee.is-dragging { cursor: grabbing; }
+    .cases-marquee.is-dragging .case-card { pointer-events: none; }
+    .cases-track {
+      display: flex;
+      gap: 24px;
+      width: max-content;
+      padding: 0 12px;
+    }
+    .case-card {
+      flex: 0 0 clamp(260px, 27vw, 360px);
+      background: var(--card);
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 16px 36px rgba(36, 31, 46, 0.22);
+      display: flex;
+      flex-direction: column;
+    }
+    .case-img {
+      position: relative;
+      aspect-ratio: 4 / 3;
+      overflow: hidden;
+    }
+    .case-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .case-tag {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      font-size: 10.5px;
+      font-weight: 600;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+      color: var(--creme-pale);
+      background: rgba(36, 31, 46, 0.78);
+      padding: 5px 11px;
+      border-radius: 999px;
+    }
+    .case-cap {
+      padding: 18px 20px 22px;
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: 17px;
+      font-weight: 700;
+      line-height: 1.35;
+      color: var(--grafite);
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .cases-track { animation: none; }
+      .cases-marquee {
+        overflow-x: auto;
+        -webkit-mask-image: none; mask-image: none;
+      }
+    }
+    @media (max-width: 768px) {
+      .cases { padding: 56px 0 60px; }
+      .cases-head { padding: 0 20px; margin-bottom: 32px; }
+      .cases-title { font-size: 30px; }
+      .case-card { flex-basis: 78vw; }
+      .cases-track { animation-duration: 42s; }
+    }
   </style>
 </head>
 <body>
@@ -826,6 +930,100 @@
       </div>
     </div>
   </div>
+
+  <!-- CASES (carrossel de encontros formativos) -->
+  <section class="cases" aria-label="Cases de treinamento">
+    <div class="cases-head">
+      <div class="eyebrow">Na prática</div>
+      <h2 class="cases-title">Encontros que <em>semeiam a transformação</em></h2>
+      <p class="cases-sub">Um recorte de formações, painéis, workshops e imersões que conduzo, sempre com base em metodologias embasadas em ciência e mão na massa.</p>
+    </div>
+    <div class="cases-marquee">
+      <div class="cases-track">
+        <figure class="case-card">
+          <div class="case-img"><span class="case-tag">Empresas</span><img src="imagem/empresas01.jpg" alt="Papo com lideranças de RH sobre NR1 e segurança psicológica" loading="lazy"></div>
+          <figcaption class="case-cap">Papo com lideranças de RH sobre NR1 e segurança psicológica</figcaption>
+        </figure>
+        <figure class="case-card">
+          <div class="case-img"><span class="case-tag">Empresas</span><img src="imagem/empresas02.jpg" alt="Formações e imersões em gestão do conhecimento" loading="lazy"></div>
+          <figcaption class="case-cap">Formações e imersões em gestão do conhecimento</figcaption>
+        </figure>
+        <figure class="case-card">
+          <div class="case-img"><span class="case-tag">Empresas</span><img src="imagem/empresas03.jpg" alt="Painel na InspiraVelle sobre inovação e transformação cultural em IA" loading="lazy"></div>
+          <figcaption class="case-cap">Painel sobre inovação e transformação cultural em IA</figcaption>
+        </figure>
+        <figure class="case-card">
+          <div class="case-img"><span class="case-tag">Empresas</span><img src="imagem/home_case01.png" alt="Webinar Open Arena sobre transformação cultural em IA na Alice" loading="lazy"></div>
+          <figcaption class="case-cap">Webinar Open Arena sobre transformação cultural em IA na Alice</figcaption>
+        </figure>
+        <figure class="case-card">
+          <div class="case-img"><span class="case-tag">Empresas</span><img src="imagem/home_case02.jpg" alt="Lançamento de Revista Científica como parte da estratégia acadêmica de comunidade de aprendizagem" loading="lazy"></div>
+          <figcaption class="case-cap">Lançamento de Revista Científica: estratégia acadêmica de comunidade de aprendizagem</figcaption>
+        </figure>
+        <figure class="case-card">
+          <div class="case-img"><span class="case-tag">Escolas</span><img src="imagem/escola02.jpeg" alt="Todos com a mão na massa" loading="lazy"></div>
+          <figcaption class="case-cap">Aprendizagem ativa: todos com a mão na massa</figcaption>
+        </figure>
+        <figure class="case-card">
+          <div class="case-img"><span class="case-tag">Escolas</span><img src="imagem/escola03.jpeg" alt="Comunicação afetiva e arquétipos de autoridade na escola" loading="lazy"></div>
+          <figcaption class="case-cap">Comunicação afetiva e arquétipos de autoridade na escola</figcaption>
+        </figure>
+        <figure class="case-card">
+          <div class="case-img"><span class="case-tag">Escolas</span><img src="imagem/escola05.jpg" alt="Comunicação Não Violenta para escolas" loading="lazy"></div>
+          <figcaption class="case-cap">Comunicação Não Violenta para escolas</figcaption>
+        </figure>
+        <figure class="case-card">
+          <div class="case-img"><span class="case-tag">Escolas</span><img src="imagem/escola06.jpeg" alt="Sistematização coletiva: todo mundo ensina, todo mundo aprende" loading="lazy"></div>
+          <figcaption class="case-cap">Sistematização coletiva: todo mundo ensina, todo mundo aprende</figcaption>
+        </figure>
+        <figure class="case-card">
+          <div class="case-img"><span class="case-tag">Escolas</span><img src="imagem/escola07.jpg" alt="Intervenção poética para toda a comunidade escolar" loading="lazy"></div>
+          <figcaption class="case-cap">Intervenção poética para toda a comunidade escolar</figcaption>
+        </figure>
+        <!-- duplicata para loop contínuo -->
+        <figure class="case-card" aria-hidden="true">
+          <div class="case-img"><span class="case-tag">Empresas</span><img src="imagem/empresas01.jpg" alt="" loading="lazy"></div>
+          <figcaption class="case-cap">Papo com lideranças de RH sobre NR1 e segurança psicológica</figcaption>
+        </figure>
+        <figure class="case-card" aria-hidden="true">
+          <div class="case-img"><span class="case-tag">Empresas</span><img src="imagem/empresas02.jpg" alt="" loading="lazy"></div>
+          <figcaption class="case-cap">Formações e imersões em gestão do conhecimento</figcaption>
+        </figure>
+        <figure class="case-card" aria-hidden="true">
+          <div class="case-img"><span class="case-tag">Empresas</span><img src="imagem/empresas03.jpg" alt="" loading="lazy"></div>
+          <figcaption class="case-cap">Painel sobre inovação e transformação cultural em IA</figcaption>
+        </figure>
+        <figure class="case-card" aria-hidden="true">
+          <div class="case-img"><span class="case-tag">Empresas</span><img src="imagem/home_case01.png" alt="" loading="lazy"></div>
+          <figcaption class="case-cap">Webinar Open Arena sobre transformação cultural em IA na Alice</figcaption>
+        </figure>
+        <figure class="case-card" aria-hidden="true">
+          <div class="case-img"><span class="case-tag">Empresas</span><img src="imagem/home_case02.jpg" alt="" loading="lazy"></div>
+          <figcaption class="case-cap">Lançamento de Revista Científica: estratégia acadêmica de comunidade de aprendizagem</figcaption>
+        </figure>
+        <figure class="case-card" aria-hidden="true">
+          <div class="case-img"><span class="case-tag">Escolas</span><img src="imagem/escola02.jpeg" alt="" loading="lazy"></div>
+          <figcaption class="case-cap">Aprendizagem ativa: todos com a mão na massa</figcaption>
+        </figure>
+        <figure class="case-card" aria-hidden="true">
+          <div class="case-img"><span class="case-tag">Escolas</span><img src="imagem/escola03.jpeg" alt="" loading="lazy"></div>
+          <figcaption class="case-cap">Comunicação afetiva e arquétipos de autoridade na escola</figcaption>
+        </figure>
+        <figure class="case-card" aria-hidden="true">
+          <div class="case-img"><span class="case-tag">Escolas</span><img src="imagem/escola05.jpg" alt="" loading="lazy"></div>
+          <figcaption class="case-cap">Comunicação Não Violenta para escolas</figcaption>
+        </figure>
+        <figure class="case-card" aria-hidden="true">
+          <div class="case-img"><span class="case-tag">Escolas</span><img src="imagem/escola06.jpeg" alt="" loading="lazy"></div>
+          <figcaption class="case-cap">Sistematização coletiva: todo mundo ensina, todo mundo aprende</figcaption>
+        </figure>
+        <figure class="case-card" aria-hidden="true">
+          <div class="case-img"><span class="case-tag">Escolas</span><img src="imagem/escola07.jpg" alt="" loading="lazy"></div>
+          <figcaption class="case-cap">Intervenção poética para toda a comunidade escolar</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
 
   <!-- RECONHECE (agitação) -->
   <section class="section section-creme">
@@ -1075,6 +1273,60 @@
       c.addEventListener('mouseleave', start);
 
       start();
+    })();
+
+    // Carrossel de cases: auto-scroll contínuo + arrastar pra avançar/voltar
+    (function () {
+      const marquee = document.querySelector('.cases-marquee');
+      const track = marquee && marquee.querySelector('.cases-track');
+      if (!marquee || !track) return;
+
+      const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const SPEED = 0.5; // px por frame (~30px/s)
+      let half = track.scrollWidth / 2; // largura de um conjunto (a lista é duplicada)
+      let paused = false, dragging = false, startX = 0, startScroll = 0, raf;
+
+      function wrap() {
+        if (half <= 0) return;
+        if (marquee.scrollLeft >= half) marquee.scrollLeft -= half;
+        else if (marquee.scrollLeft < 0) marquee.scrollLeft += half;
+      }
+      function tick() {
+        if (!paused && !dragging) { marquee.scrollLeft += SPEED; wrap(); }
+        raf = requestAnimationFrame(tick);
+      }
+
+      // pausa no hover, mas continua permitindo rolar com a roda/trackpad
+      marquee.addEventListener('mouseenter', () => { paused = true; });
+      marquee.addEventListener('mouseleave', () => { paused = false; });
+
+      // arrastar (segurar e mover) pra avançar ou retroceder
+      marquee.addEventListener('pointerdown', (e) => {
+        dragging = true;
+        marquee.classList.add('is-dragging');
+        startX = e.clientX;
+        startScroll = marquee.scrollLeft;
+        marquee.setPointerCapture(e.pointerId);
+      });
+      marquee.addEventListener('pointermove', (e) => {
+        if (!dragging) return;
+        marquee.scrollLeft = startScroll - (e.clientX - startX);
+        wrap();
+      });
+      function endDrag(e) {
+        if (!dragging) return;
+        dragging = false;
+        marquee.classList.remove('is-dragging');
+        if (e && e.pointerId != null && marquee.hasPointerCapture(e.pointerId)) {
+          marquee.releasePointerCapture(e.pointerId);
+        }
+      }
+      marquee.addEventListener('pointerup', endDrag);
+      marquee.addEventListener('pointercancel', endDrag);
+
+      window.addEventListener('resize', () => { half = track.scrollWidth / 2; });
+
+      if (!reduce) tick();
     })();
   </script>
 
