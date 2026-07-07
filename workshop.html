@@ -427,6 +427,24 @@
     .s-title-light { color: var(--creme-pale); }
     .s-title-light em { color: var(--rosa-2); }
 
+    /* ─── RECONHECE ─── */
+    .recognize-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 48px; }
+    .recognize-item {
+      background: var(--card); border: 1px solid var(--linha); border-radius: 12px;
+      padding: 26px 28px 26px 58px; font-size: 16px; line-height: 1.5; color: var(--text-body);
+      position: relative;
+    }
+    .recognize-item::before {
+      content: '\201C'; position: absolute; left: 22px; top: 22px;
+      font-family: 'Fraunces', Georgia, serif; font-size: 46px; font-weight: 900;
+      color: var(--rosa); opacity: 0.38; line-height: 1;
+    }
+    .recognize-close {
+      margin-top: 36px; font-family: 'Fraunces', Georgia, serif; font-weight: 700;
+      font-size: clamp(1.3rem, 2vw, 1.75rem); line-height: 1.35; color: var(--grafite); max-width: 32ch;
+    }
+    .recognize-close em { font-style: italic; color: var(--rosa); }
+
     .s-body {
       font-size: 16px;
       line-height: 1.75;
@@ -677,6 +695,7 @@
       .section { padding: 56px 20px; }
       .s-title { font-size: 36px; }
       .learn-grid { grid-template-columns: 1fr; gap: 12px; }
+      .recognize-grid { grid-template-columns: 1fr; }
       .forwho-grid { grid-template-columns: 1fr; }
       .instructor-wrap { gap: 28px; }
       .instructor-photo { max-width: 220px; }
@@ -848,6 +867,23 @@
     </div>
     </div><!-- /.wrap -->
   </div>
+
+  <!-- RECONHECE (agitação) -->
+  <section class="section section-warm">
+    <div class="wrap">
+      <div class="eyebrow">Entre nós</div>
+      <h2 class="s-title">Você reconhece<br><em>isso?</em></h2>
+      <div class="recognize-grid">
+        <div class="recognize-item">Fiz um treinamento parrudo cheio de conteúdo, todo mundo consumiu, mas no dia seguinte ninguém lembra de nada.</div>
+        <div class="recognize-item">Meus treinamentos são NPS 100, mas não tenho indicadores na ponta pra saber se a performance está melhorando.</div>
+        <div class="recognize-item">Não consigo segurar a atenção da turma: é multitask o tempo todo, o celular e o cansaço dominam.</div>
+        <div class="recognize-item">Quando aplico dinâmicas e atividades, sempre os mesmos poucos participam e os demais ficam com aquela cara de “lá vem o RH…”</div>
+      </div>
+      <p class="recognize-close">
+        A diferença entre quem aplica treinamento e quem tem a sala na mão tem nome: <em>método</em>. E ele se aprende.
+      </p>
+    </div>
+  </section>
 
   <!-- O QUE VOCÊ VAI APRENDER -->
   <section class="section section-creme">
