@@ -292,15 +292,12 @@
     }
     .strip-divider { max-width: 1080px; margin: 34px auto 0; height: 1px; background: rgba(255,255,255,0.12); }
     .strip-clients { max-width: 1200px; margin: 0 auto; padding-top: 28px; text-align: center; }
-    .strip-clients-label {
-      font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase;
-      color: var(--text-dark-muted); margin-bottom: 20px;
-    }
-    .strip-logos { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 20px 34px; }
+    .strip-logos { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 22px 38px; }
     .strip-client-logo {
-      height: 30px; width: auto; max-width: 130px; object-fit: contain;
+      height: 40px; width: auto; max-width: 160px; object-fit: contain;
       filter: brightness(0) invert(1); opacity: 0.72; transition: opacity .2s;
     }
+    .strip-client-logo--somos { height: 30px; }
     .strip-client-logo:hover { opacity: 1; }
     .strip-item { text-align: center; white-space: nowrap; }
     .strip-num {
@@ -773,8 +770,9 @@
       .strip { padding: 36px 20px; }
       .strip-inner { gap: 20px; }
       .strip-sep { display: none; }
-      .strip-logos { gap: 16px 24px; }
-      .strip-client-logo { height: 24px; max-width: 104px; }
+      .strip-logos { gap: 18px 26px; }
+      .strip-client-logo { height: 32px; max-width: 120px; }
+      .strip-client-logo--somos { height: 24px; }
       .section { padding: 56px 20px; }
       .s-title { font-size: 34px; }
       .work-card { padding: 30px 26px; }
@@ -982,7 +980,6 @@
     </div>
     <div class="strip-divider"></div>
     <div class="strip-clients">
-      <div class="strip-clients-label">Já dei formação em</div>
       <div class="strip-logos">
         <img class="strip-client-logo" src="imagem/logos_escola/logo-gov.png" alt="Governo de São Paulo" loading="lazy" />
         <img class="strip-client-logo" src="imagem/logos_escola/logo_parana.png" alt="Governo do Paraná" loading="lazy" />
@@ -990,7 +987,7 @@
         <img class="strip-client-logo" src="imagem/logos_escola/logo_sidarta.webp" alt="Instituto Sidarta" loading="lazy" />
         <img class="strip-client-logo" src="imagem/logos_escola/logo_cacaushow.png" alt="Instituto Cacau Show" loading="lazy" />
         <img class="strip-client-logo" src="imagem/logos_escola/logo_parceiros.png" alt="Parceiros da Educação" loading="lazy" />
-        <img class="strip-client-logo" src="imagem/logos_escola/logo_somos.png" alt="Somos Educação" loading="lazy" />
+        <img class="strip-client-logo strip-client-logo--somos" src="imagem/logos_escola/logo_somos.png" alt="Somos Educação" loading="lazy" />
         <img class="strip-client-logo" src="imagem/logos_escola/logo_ph.png" alt="Colégio pH" loading="lazy" />
         <img class="strip-client-logo" src="imagem/logos_escola/logo_tarsila.png" alt="Escola Tarsila do Amaral" loading="lazy" />
       </div>
@@ -1221,7 +1218,7 @@
             Pesquisei o ensino de ciências no Brasil, com recorte de gênero e raça, em parceria da Fundação Carlos Chagas com o British Council. Hoje sou Head de Learning e D&amp;I na Alice.
           </p>
           <p class="about-bio">
-            Amo dar aula. Faria de graça. Aliás, faço: este workshop é prova disso.
+            Amo dar aula. Faria de graça. Aliás, faço.
           </p>
           <div class="about-stats">
             <div class="istat">
